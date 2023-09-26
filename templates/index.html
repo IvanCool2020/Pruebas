@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Bootslander Bootstrap Template - Index</title>
+  <title>Tarea Ciencia de datos - 4</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  
   <!-- Favicons -->
-<link href="{{ url_for('static', filename='assets/img/favicon.png') }}" rel="icon">
-<link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <link href="{{ url_for('static', filename='assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ url_for('static', filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -28,9 +28,26 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+  
+  <!-- Previsualizacion del codigo -->
+  <link id="codeTheme" rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/monokai-sublime.min.css">
+  
+  <style>
+    .language-python.hljs {
+      margin-left: -85px !important;
+      }
 
+      .img-container {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .img-container img {
+        width: 100%;
+        height: auto;
+    }
+    </style>
 
-   
 
   <!-- =======================================================
   * Template Name: Bootslander
@@ -42,13 +59,14 @@
 </head>
 
 <body>
+  
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1><a href="index.html"><span>Bootslander</span></a></h1>
+        <h1><a href="#index.html"><span>Ivan Sergio Lopez</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -89,12 +107,14 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
 
+  
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
           <div data-aos="zoom-out">
-            <h1>Build Your Landing Page With <span>{{ message }}</span></h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
+            <h1>¡Hola a todos! </h1> 
+            <!-- <span>{{ message }}</span> -->
+            <h2>Soy un entusiasta del análisis de datos, apasionado por las nuevas tecnologías. Aunque estoy comenzando mi viaje en este campo.<br>¡Estoy listo para aprender y crecer en este emocionante mundo de los datos!</h2>
             <div class="text-center text-lg-start">
               <a href="#about" class="btn-get-started scrollto">Get Started</a>
             </div>
@@ -131,12 +151,48 @@
 
         <div class="row">
           <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="https://www.youtube.com/watch?v=StpBR2W8G5A" class="glightbox play-btn mb-4"></a>
+            <a href="{{ url_for('static', filename='assets/video/presentacion.mp4') }}"   class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
             <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
             <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+           
+            <pre><code class="language-python hljs code">
+              from flask import Flask, render_template
+              import seaborn as sns
+              import matplotlib.pyplot as plt
+
+              app = Flask(__name__)
+
+              def create_plot():
+                  tips = sns.load_dataset("tips")
+                  sns_plot = sns.relplot(x="total_bill", y="tip", data=tips)
+                  sns_plot.savefig('static/plot.png')
+
+              @app.route('/')
+              def home():
+                  message="Hola a todos"
+                  return render_template('index.html',message=message)
+              </code></pre>
+               
+              <pre><code class="language-python hljs result">
+              4
+              </code></pre>  
+              
+              <style>
+                .hljs.result {
+                    background: #f0f0f0; /* Cambia esto al color de fondo que desees para el resultado */
+                    color: #000000; /* Cambia esto al color de texto que desees para el resultado */
+                }
+            </style>
+
+              <script>
+                hljs.highlightAll();
+              </script>
+            
+
+
 
             <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
@@ -947,6 +1003,58 @@
 
 <!-- Template Main JS File -->
 <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+<!-- Previsualizacion Codigo-->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/highlight.min.js"></script>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/languages/javascript.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+<script>
+  $(document).ready(function() {
+    $('#exampleModal').modal('show');
+    
+  });
+</script>
+
+
+   <!-- VENTANA MODAL-->
+      
+    <!-- Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      <strong>
+        <h5 class="modal-title" id="exampleModalLabel">¡Bienvenidos a mi página web de prueba!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Quiero enfatizar que He decidido utilizar el formato web para esta tarea con el objetivo de explorar nuevas formas de presentar información y aprender nuevas habilidades. Por favor, ten en cuenta que este es un espacio de aprendizaje y agradezco tu comprensión.</p>
+        <div class="img-container">
+          <img src="{{ url_for('static', filename='assets/img/bad.jpg') }}" alt="">
+      </div>     
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
+      </div>
+    
+    </strong>
+
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+
 
 
 </body>

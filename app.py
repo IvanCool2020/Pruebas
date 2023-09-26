@@ -11,7 +11,7 @@ def create_plot():
 
 @app.route('/')
 def home():
-    message="Hola a todos"
+    message="Ivan Sergio Lopez"
     return render_template('index.html',message=message)
 
 if __name__ == '__main__':
