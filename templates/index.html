@@ -861,20 +861,20 @@
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Ubicación :</h4>
+                <p>Santa Rosa 231, Segui , Entre Rios, Argentina</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>ivansergiolopez2020@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>+543434540675</p>
               </div>
 
             </div>
@@ -903,7 +903,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit" onclick="sendEmail()" >Send Message</button></div>
             </form>
 
           </div>
@@ -1031,7 +1031,7 @@
     <div class="modal-content">
       <div class="modal-header">
       <strong>
-        <h5 class="modal-title" id="exampleModalLabel">¡Bienvenidos a mi página web de prueba!</h5>
+        <h5 class="modal-title" id="exampleModalLabel">¡Bienvenidos !!!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1050,8 +1050,46 @@
   </div>
 </div>
 
-    
 
+<!-- Enviar email-->
+    
+<script>
+  const nodemailer = require("nodemailer");
+  
+  // Create a transporter object
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "Ivansergiolopez2020@gmail.com",
+      password: "dontetto",
+    },
+  });
+  
+  function sendEmail() {
+    // Get the form data
+    const sender = document.querySelector("#name").value;
+    const recipient = document.querySelector("#email").value;
+    const subject = document.querySelector("#subject").value;
+    const message = document.querySelector("#message").value;
+  
+    // Create an email object
+    const email = {
+      from: sender,
+      to: recipient,
+      subject: subject,
+      text: message,
+    };
+  
+    // Send the email
+    transporter.sendMail(email, (err, info) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(info);
+      }
+    });
+  }
+  </script> 
 
 
 
