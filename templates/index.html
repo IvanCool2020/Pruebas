@@ -873,7 +873,7 @@
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
+                <h4>Telefono:</h4>
                 <p>+543434540675</p>
               </div>
 
@@ -883,9 +883,9 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-            <form method="post" role="form" class="php-email-form">
+             
       
-        <!--    <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
+         <form action="forms/contact.py" method="post" role="form" class="php-email-form"> 
 
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -910,6 +910,18 @@
             </form>
 
           </div>
+          
+          <!-- Alert Email  -->
+          <div class="alert alert-success" id="sent-message" style="display: none;">
+            Your message has been sent successfully!
+          </div>
+          
+          <div class="alert alert-danger" id="error-message" style="display: none;">
+            An error occurred while sending your message. Please try again later.
+          </div>
+          
+
+
 
         </div>
 
@@ -1056,42 +1068,34 @@
 
 <!-- Enviar email-->
     
-<script>
-  const nodemailer = require("nodemailer");
-  
-  // Create a transporter object
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "Ivansergiolopez2020@gmail.com",
-      password: "dontetto",
-    },
-  });
-  
+  <script>
   function sendEmail() {
-    // Get the form data
-    const sender = document.querySelector("#name").value;
-    const recipient = document.querySelector("#email").value;
-    const subject = document.querySelector("#subject").value;
-    const message = document.querySelector("#message").value;
-  
-    // Create an email object
-    const email = {
-      from: sender,
-      to: recipient,
-      subject: subject,
-      text: message,
-    };
-  
-    // Send the email
-    transporter.sendMail(email, (err, info) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(info);
-      }
-    });
-  }
+  // Get the form data.
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  // Create a new email object.
+  const emailMessage = new Email({
+    to: "ivansergiolopez2020@gmail.com",
+    from: email,
+    subject: subject,
+    body: message,
+  });
+
+  // Send the email.
+  emailMessage.send().then(() => {
+    // The email was sent successfully.
+    // Show the success message to the user.
+    document.getElementById("sent-message").style.display = "block";
+  }).catch((error) => {
+    // The email failed to send.
+    // Show the error message to the user.
+    document.getElementById("error-message").style.display = "block";
+  });
+}
+
   </script> 
 
 
