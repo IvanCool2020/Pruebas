@@ -162,22 +162,8 @@
             <h3>Ejercicio 1</h3>
             <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
            
-            <pre><code class="language-sql hljs code">
-              from flask import Flask, render_template
-              import seaborn as sns
-              import matplotlib.pyplot as plt
-
-              app = Flask(__name__)
-
-              def create_plot():
-                  tips = sns.load_dataset("tips")
-                  sns_plot = sns.relplot(x="total_bill", y="tip", data=tips)
-                  sns_plot.savefig('static/plot.png')
-
-              @app.route('/')
-              def home():
-                  message="Hola a todos"
-                  return render_template('index.html',message=message)
+              <pre><code class="language-sql hljs code">
+              select * from mi_tabla
               </code></pre>
                
                
@@ -1013,9 +999,11 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script>
   hljs.highlightAll();
 </script>
+
 <script>
   $(document).ready(function() {
     $('#exampleModal').modal('show');
