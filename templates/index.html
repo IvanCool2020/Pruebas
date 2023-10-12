@@ -846,7 +846,9 @@
       </div>
     </section><!-- End F.A.Q Section -->
 
-    <!-- ======= Contact Section ======= -->
+
+    <!-- EMAIL - CONTACTO  
+     
     <section id="contact" class="contact">
       <div class="container">
 
@@ -884,9 +886,9 @@
           <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
              
-            <form>
+          
               
-        <!-- <form action="forms/contact.py" method="post" role="form" class="php-email-form" --> 
+            <form action="forms/contact.py" method="post" role="form" class="php-email-form"  
 
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -912,7 +914,7 @@
 
           </div>
           
-          <!-- Alert Email  -->
+       
           <div class="alert alert-success" id="sent-message" style="display: none;">
             Your message has been sent successfully!
           </div>
@@ -927,7 +929,11 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section> 
+
+     -->
+
+
 
   </main><!-- End #main -->
 
@@ -1067,37 +1073,6 @@
 </div>
 
 
-<!-- Enviar email-->
-    
-  <script>
-  function sendEmail() {
-  // Get the form data.
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const subject = document.getElementById("subject").value;
-  const message = document.getElementById("message").value;
-
-  // Create a new email object.
-  const emailMessage = new Email({
-    to: "ivansergiolopez2020@gmail.com",
-    from: email,
-    subject: subject,
-    body: message,
-  });
-
-  // Send the email.
-  emailMessage.send().then(() => {
-    // The email was sent successfully.
-    // Show the success message to the user.
-    document.getElementById("sent-message").style.display = "block";
-  }).catch((error) => {
-    // The email failed to send.
-    // Show the error message to the user.
-    document.getElementById("error-message").style.display = "block";
-  });
-}
-
-  </script> 
 
 
 
