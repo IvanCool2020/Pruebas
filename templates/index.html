@@ -32,6 +32,9 @@
   <!-- Previsualizacion del codigo -->
   <link id="codeTheme" rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.7.0/styles/monokai-sublime.min.css">
   
+  <!-- Libreria FancyBox -->
+  <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
+
   <style>
     .language-python.hljs {
       margin-left: -85px !important;
@@ -360,30 +363,29 @@
     </section>
     -->
     
-
-
-
-    
-    <!-- ======= Details Section ======= -->
-    <section id="ejercicio_1" class="details">
-      <section id="testimonials" class="testimonials">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 1</h2>
-            </div>
-          </div>
-        </div>    
-      </section> 
-    </section>
-    
-
-
+ 
 
 
 
 
       <div class="container">
+
+              <!-- ======= Details Section ======= -->
+              <section id="ejercicio_1" class="details">
+                <section id="testimonials" class="testimonials">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                      <div class="col-lg-8">
+                        <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 1</h2>
+                      </div>
+                    </div>
+                  </div>    
+                </section> 
+              </section>
+
+
+
+
 
         <div class="row content">
           <div class="col-md-3 d-flex flex-column justify-content-between">
@@ -397,10 +399,10 @@
               Enunciado del Ejercicio: 
             </p>
             <ul>
-              <li><i class="bi bi-check"></i> Utilizando los comandos CREATE DATABASE, CREATE TABLE e INSERT INTO, crea una base de datos llamada "Ferretería" que contenga dos tablas, una llamada "Inventario" y otra llamada "Proveedores".</li>
-              <li><i class="bi bi-check"></i> Cada tabla debe contener al menos con cinco filas.</li>
-              <li><i class="bi bi-check"></i> Para la tabla "Inventario" crea un campo cuyos valores comiencen en 1 y vayan incrementando de uno en uno automáticamente y utiliza este campo como llave primaria. Agrega además los campos "Descripción", "Inventario_Minimo" y "Proveedor".</li>
-              <li><i class="bi bi-check"></i> La tabla "Proveedores" deberá contener los campos "Proveedor" (el cual contendrá la misma información que el campo "Proveedor" de la tabla "Inventario"), "Teléfono" y "Tiempo de Entrega", que será la cantidad de días hábiles que el proveedor tarda en entregar el material a la Ferretería.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando los comandos CREATE DATABASE, CREATE TABLE e INSERT INTO, crea una base de datos llamada "Ferretería" que contenga dos tablas, una llamada "Inventario" y otra llamada "Proveedores".</li> 
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Cada tabla debe contener al menos con cinco filas.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Para la tabla "Inventario" crea un campo cuyos valores comiencen en 1 y vayan incrementando de uno en uno automáticamente y utiliza este campo como llave primaria. Agrega además los campos "Descripción", "Inventario_Minimo" y "Proveedor".</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> La tabla "Proveedores" deberá contener los campos "Proveedor" (el cual contendrá la misma información que el campo "Proveedor" de la tabla "Inventario"), "Teléfono" y "Tiempo de Entrega", que será la cantidad de días hábiles que el proveedor tarda en entregar el material a la Ferretería.</li>
             </ul>
                        
 
@@ -520,32 +522,40 @@
         </div>
 
       </div>
+ 
     </section><!-- End Gallery Section -->
+     
+
+
+
+
+
+    <div class="container">
+
     
-  
-    </div>
-
-
-
 
      <!-- ======= Details Section ======= -->
-     <section id="ejercicio_2" class="details">
-      <section id="testimonials" class="testimonials">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-8">
-              <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 2</h2>
-            </div>
-          </div>
-        </div>    
-      </section> 
-    </section>
+            <section id="ejercicio_2" class="details">
+              <section id="testimonials" class="testimonials">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                      <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 2</h2>
+                    </div>
+                  </div>
+                </div>    
+              </section> 
+            </section>
+
+
+     
 
 
 
 
 
         <div class="row content" id="ejercicio_2"  >
+
           <div class="col-md-3 d-flex flex-column justify-content-between">
             <img src="{{ url_for('static', filename='assets/img/chavo_2.png') }}" class="img-fluid mb-auto" alt=""> 
             <div class="my-auto"></div>
@@ -556,12 +566,12 @@
               Enunciado del Ejercicio: 
             </p>
             <ul>
-              <li><i class="bi bi-check"></i> Carga el archivo PODateTime.csv que viene en la carpeta recursos del curso siguiendo las instrucciones que ya vimos anteriormente.
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Carga el archivo PODateTime.csv que viene en la carpeta recursos del curso siguiendo las instrucciones que ya vimos anteriormente.
                 Una vez que lo hayas cargado, genera una consulta en la que extraigas el año en el que fueron colocadas las órdenes que comienzan con PO5. Incluye dichas órdenes de compra en tus resultados.</li>
-              <li><i class="bi bi-check"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>
-              <li><i class="bi bi-check"></i>Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
-              <li><i class="bi bi-check"></i> Realiza la misma consulta que el punto 3, pero obteniendo solamente la información de los paises cuya cantidad de mujeres participantes sea mayor a 10.</li>
-              <li><i class="bi bi-check"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i>Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Realiza la misma consulta que el punto 3, pero obteniendo solamente la información de los paises cuya cantidad de mujeres participantes sea mayor a 10.</li>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
             
             </ul>
                        
@@ -638,8 +648,11 @@
 
       </div>
     </section><!-- End Details Section -->
-
+      </div>
     
+
+
+
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -908,32 +921,84 @@
         <div class="faq-list">
           <ul>
             
-
+                 <!-- ANEXO 1 -->
             <li data-aos="fade-up" data-aos-delay="100">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed"> Tipos de comandos en SQL ❓ <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <img src="{{ url_for('static', filename='assets/img/Auxiliares/ddl.png') }}" class="img-fluid" alt="">
-
+                <a target="_blank" href="https://www.canva.com/design/DAFxKwG99mE/vUKSE1lRkhyHBNW1AlaZEw/edit?utm_content=DAFxKwG99mE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" style="text-align: right; font-size: 22px;">Ir al Enlace...</a>
+           
               </div>
             </li>
-
+                  <!-- ANEXO 2 -->
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Conceptos Basicos : ❗❗❗ <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
+                 <br></br>
+                 <h3>Ayuda de Memoria 🤣</h3>
+              
+                <section id="gallery" class="gallery">
+                  <div class="container">
+             
+                    <div class="row g-0" data-aos="fade-left">
+       
+                    <div class="col-lg-4 col-md-4">
+                        <a data-fancybox="Basic_datos_sql"
+                        data-src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql1.png') }}"
+                        >
+                       <img src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql1.png') }}" width="350px"/>
+                       </a>
+                         
+                      </div>
+            
+                      <div class="col-lg-4 col-md-4"> 
+                         
+                          <a data-fancybox="Basic_datos_sql"
+                          data-src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql2.png') }}"
+                           >
+                         <img src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql2.png') }}" width="350px" />
+                       </a>
+                         
+                      </div>
+            
+                      <div class="col-lg-4 col-md-4"> 
+                          <a data-fancybox="Basic_datos_sql"
+                          data-src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql3.png') }}"
+                            >
+                         <img src="{{ url_for('static', filename='assets/img/Basic_datos_sql/sql3.png') }}" width="350px" />
+                       </a>
+                      </div> 
+                           
+                      
+
+                      <div>
+                        
+                    
+            
+                    </div>
+            
+                  </div>
+                </section><!-- End Gallery Section --> 
+  
+                <a target="_blank" href="https://www.canva.com/design/DAFxPJ9eyGQ/2J3a7JjIOM7HQxM-4rV6gQ/edit?utm_content=DAFxPJ9eyGQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn-get-started scrollto" style="text-align: right; font-size: 22px;">Ir al Enlace...</a>
               </div>
+          
             </li>
+
+
+              <!-- ANEXO 3 -->
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Los Joins en sql : 😎<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                </p>
+                 
+                <img src="{{ url_for('static', filename='assets/img/Auxiliares/joins.png') }}" class="img-fluid" alt="">
+                <a target="_blank" href="https://www.sqlshack.com/wp-content/uploads/2021/08/sql-join-chart-custom-poster-size-sql.png" class="btn-get-started scrollto" style="text-align: right; font-size: 22px;">Ir al Enlace...</a>
               </div>
             </li>
+
+
+
 
             <li data-aos="fade-up" data-aos-delay="400">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
@@ -1134,6 +1199,24 @@
 <script>
   hljs.highlightAll();
 </script>
+
+
+<!-- Libreria FancyBox -->
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/l10n/de.umd.js"></script>
+<script>
+  Fancybox.bind('[data-fancybox="Basic_datos_sql"]', {
+    l10n : Fancybox.l10n.de
+  }); 
+
+  Fancybox.bind('[data-fancybox="Auxiliares"]', {
+    l10n : Fancybox.l10n.de
+  });   
+</script>
+
+
+
+
 
    <!-- VENTANA MODAL-->
 <!-- 
