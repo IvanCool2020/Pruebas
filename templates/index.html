@@ -568,88 +568,727 @@
             <ul>
               <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Carga el archivo PODateTime.csv que viene en la carpeta recursos del curso siguiendo las instrucciones que ya vimos anteriormente.
                 Una vez que lo hayas cargado, genera una consulta en la que extraigas el año en el que fueron colocadas las órdenes que comienzan con PO5. Incluye dichas órdenes de compra en tus resultados.</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i>Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Realiza la misma consulta que el punto 3, pero obteniendo solamente la información de los paises cuya cantidad de mujeres participantes sea mayor a 10.</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
-            
-            </ul>
+             </ul>    
                        
 
           <pre>
               <code class="sql">
-           
+            use Pruebas
+
+            SELECT   
+                D.PurchaseOrderNumber AS [ORDEN DE COMPRA],
+                YEAR(D.FECHA) AS [AÑO]
+                FROM
+            dbo.DATASET_FECHAS as D
+                WHERE 
+                D.PurchaseOrderNumber LIKE 'PO5%'
+              </code>
+          </pre>        
+          <pre>
+              <code class="sql">
+                | ORDEN DE COMPRA | AÑO |
+                |-----------------|-----|
+                | PO5539125166    | 2021|
+                | PO5713190501    | 2021|
               </code>
           </pre>
+          
+
+       <ul>
+          <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>  
+        </ul>
+
+        <pre>
+          <code class="sql">
+            CREATE DATABASE MARATON
+
+            USE MARATON
+            
+            SELECT  * 
+                FROM DBO.MaratonNY AS D
+            WHERE 
+                D.gender ='Male' AND
+                D.age >= 60      AND
+                D.TIME < 200 
+          </code>
+      </pre>        
+
+      <pre>
+        <code class="sql">
+          -- SOLO LOS 10 PRIMEROS RESULTADOS  :) --
+          | Corredor | Place | Género | Edad | Lugar de origen | Tiempo |
+          |----------|-------|--------|------|-----------------|--------|
+          | 23043    | 23413 | Male   | 71   | FL             | 414.70 |
+          | 23128    | 23499 | Male   | 67   | GA             | 431.62 |
+          | 15203    | 15480 | Male   | 69   | FRA            | 276.50 |
+          | 11424    | 11659 | Male   | 60   | NY             | 262.77 |
+          | 22743    | 23112 | Male   | 81   | ITA            | 389.00 |
+          | 7941     | 8133  | Male   | 61   | FRA            | 244.30 |
+          | 20736    | 21085 | Male   | 61   | FL             | 326.70 |
+          | 23145    | 23516 | Male   | 76   | NY             | 430.82 |
+          | 23230    | 23602 | Male   | 73   | NY             | 460.80 |
+          | 20669    | 21018 | Male   | 70   | JPN            | 322.98 |
+        </code>
+    </pre>        
 
 
 
+        <ul>
+           <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
+     
+        </ul>
+
+
+        <pre>
+          <code class="sql">
+            SELECT  
+                D.HOME AS PAIS,
+                COUNT(*) AS CUENTA
+                FROM DBO.MaratonNY AS D
+            WHERE 
+                D.gender ='Female' 
+            GROUP BY
+                D.home  
+            ORDER BY 
+                COUNT(*) DESC	
+          </code>
+      </pre>        
+
+ 
+
+        <pre>
+          <code class="sql">
+            -- SOLO LOS 10 PRIMEROS :)  -- 
+            | PAIS | CUENTA |
+            |------|--------|
+            | NY   | 104    |
+            | GBR  | 24     |
+            | NJ   | 19     |
+            | CA   | 16     |
+            | FRA  | 12     |
+            | GER  | 9      |
+            | CAN  | 9      |
+            | CT   | 9      |
+            | MA   | 9      |
+            | TX   | 8      |
+          </code>
+      </pre>    
+        
+
+      <ul>
+        <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
+ 
+       </ul>
+       
+       <pre>
+        <code class="sql">
+          SELECT  
+                  D.HOME AS PAIS,
+                COUNT(*) AS CUENTA
+              FROM DBO.MaratonNY AS D
+          WHERE 
+                D.gender ='Female'  
+          GROUP BY
+              D.home  
+          HAVING
+                COUNT(*) > 10
+          ORDER BY 
+                COUNT(*) DESC
+        </code>
+    </pre>    
+
+     
+    <pre>
+      <code class="sql"> 
+        | PAIS | CUENTA |
+        |------|--------|
+        | NY   | 104    |
+        | GBR  | 24     |
+        | NJ   | 19     |
+        | CA   | 16     |
+        | FRA  | 12     |
+      </code>
+  </pre>    
+
+
+        <ul>
+           <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
+    
+       </ul>
+
+       
+       <pre>
+        <code class="sql">
+        SELECT  
+            home AS 'País',
+            COUNT(*) AS 'Cantidad de Participantes',
+            MIN(age) AS 'Edad Mínima',
+            MAX(age) AS 'Edad Máxima',
+            AVG(age) AS 'Edad Promedio'
+        FROM 
+            DBO.MaratonNY
+        GROUP BY 
+            home
+        ORDER BY 
+            MAX(age) DESC  
+        </code>
+    </pre>    
+    
+    <pre>
+      <code class="sql">
+        -- SOLO LOS PRIMEROS 5 RESULTADOS :) -- 
+        | País | Cantidad de Participantes | Edad Mínima | Edad Máxima | Edad Promedio |
+        |------|---------------------------|-------------|-------------|---------------|
+        | ITA  | 52                        | 23          | 81          | 43            |
+        | NY   | 284                       | 21          | 76          | 37            |
+        | NJ   | 61                        | 21          | 73          | 39            |
+        | ID   | 1                         | 72          | 72          | 72            |
+        | ARG  | 3                         | 33          | 72          | 46            |
+       </code>
+  </pre>    
+ 
+  
 
                 </div>
         </div>
 
 
 
+ 
+
+          <section id="gallery" class="gallery">
+            <div class="container">
+
+              <div class="section-title" data-aos="fade-up">
+                <h2>Capturas</h2>
+                <p>Caputras de Pantalla del Ejercicio</p>
+              </div>
+
+              <div class="row g-0" data-aos="fade-left">
+                
+                <div class="col-lg-4 col-md-4">
+                    <a data-fancybox="EJERCICIO_2"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}"
+                    >
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}" width="350px"/>
+                  </a>
+                    
+                  </div>
+
+                  <div class="col-lg-4 col-md-4"> 
+                    
+                      <a data-fancybox="EJERCICIO_2"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}"
+                      >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}" width="350px" />
+                  </a>
+                    
+                  </div>
+
+                  <div class="col-lg-4 col-md-4"> 
+                      <a data-fancybox="EJERCICIO_2"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}"
+                        >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}" width="350px" />
+                  </a>
+                  </div> 
+                      
+                  <div class="col-lg-4 col-md-4"> 
+                    <a data-fancybox="EJERCICIO_2"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}"
+                      >
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}" width="350px" />
+                </a>
+                </div> 
+
+                <div class="col-lg-4 col-md-4"> 
+                  <a data-fancybox="EJERCICIO_2"
+                  data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}"
+                    >
+                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}" width="350px" />
+              </a>
+              </div> 
+
+                  <div>
+
+            </div>  
+          </section>
 
 
 
-
-
-
-
-
-
-
-
-
-        <div class="row content">
-          <div class="col-md-4" data-aos="fade-right">
-            <img src="{{ url_for('static', filename='assets/img/details-3.png') }}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5" data-aos="fade-up">
-            <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3>
-            <p>Cupiditate placeat cupiditate placeat est ipsam culpa. Delectus quia minima quod. Sunt saepe odit aut quia voluptatem hic voluptas dolor doloremque.</p>
-            <ul>
-              <li><i class="bi bi-check"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
-            <p>
-              Qui consequatur temporibus. Enim et corporis sit sunt harum praesentium suscipit ut voluptatem. Et nihil magni debitis consequatur est.
-            </p>
-            <p>
-              Suscipit enim et. Ut optio esse quidem quam reiciendis esse odit excepturi. Vel dolores rerum soluta explicabo vel fugiat eum non.
-            </p>
-          </div>
+ <!-- ======= Details Section ======= -->
+ <section id="ejercicio_3" class="details">
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 3</h2>
         </div>
+      </div>
+    </div>    
+  </section> 
+</section>
 
-        <div class="row content">
-          <div class="col-md-4 order-1 order-md-2" data-aos="fade-left">
-            <img src="{{ url_for('static', filename='assets/img/details-4.png') }}" class="img-fluid" alt="">
-          </div>
-          <div class="col-md-8 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Quas et necessitatibus eaque impedit ipsum animi consequatur incidunt in</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-            <ul>
-              <li><i class="bi bi-check"></i> Et praesentium laboriosam architecto nam .</li>
-              <li><i class="bi bi-check"></i> Eius et voluptate. Enim earum tempore aliquid. Nobis et sunt consequatur. Aut repellat in numquam velit quo dignissimos et.</li>
-              <li><i class="bi bi-check"></i> Facilis ut et voluptatem aperiam. Autem soluta ad fugiat.</li>
-            </ul>
-          </div>
+<div class="row content" id="ejercicio_3"  >
+
+  <div class="col-md-3 d-flex flex-column justify-content-between">
+    <img src="{{ url_for('static', filename='assets/img/chavo_3.png') }}" class="img-fluid mb-auto" alt=""> 
+    <div class="my-auto"></div>
+   </div>
+  <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+    <h3>Ejercicio 3:</h3>
+    <p class="fst-italic">
+      Enunciado del Ejercicio: 
+    </p>
+    <p class="fst-italic">
+      Para llevar a cabo esta tarea, vamos a utilizar la tabla MaratonNY que se encuentra en la base de datos Maraton. Teniendo esto en cuenta realiza lo siguiente:
+    </p>
+      <ul>
+      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Obtén el tiempo que le tomó llegar a la meta a cada una de las mujeres provenientes de NY. Muestra las columnas gender, age, home y time en los resultados y ordénalos de forma ascendente en base a los valores de la columna time.</li>
+     </ul>    
+               
+
+     <pre>
+      <code class="sql">
+            SELECT 
+                D.gender,
+                D.age, 
+                D.home,
+                D.[time] 
+            FROM
+                DBO.MaratonNY AS D
+            WHERE 
+                D.gender = 'Female' AND
+                D.home='NY'
+            ORDER BY D.time ASC
+      </code>
+    </pre>        
+
+  <pre>
+    <code class="sql">
+            -- SOLO LOS 5 PRIMEROS --
+            | Género | Edad | Hogar | Tiempo |
+            |--------|------|-------|--------|
+            | Female | 26   | NY    | 175.53 |
+            | Female | 35   | NY    | 194.95 |
+            | Female | 30   | NY    | 204.93 |
+            | Female | 32   | NY    | 207.15 |
+            | Female | 23   | NY    | 217.48 |
+      </code>
+   </pre>        
+
+   
+   <ul>
+    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Crea una lista con los hombres menores de 30 años y de las mujeres que tengan entre 30 y 40 años. Incluye las columnas gender, age y home. Ordena la lista en base a la edad.</li>
+   </ul>   
+
+  
+   <pre>
+    <code class="sql">
+          SELECT 
+              D.gender,
+              D.age, 
+              D.home,
+              D.[time] 
+          FROM 
+              DBO.MaratonNY AS D
+          WHERE 
+              D.age BETWEEN 30 AND 40
+          ORDER BY
+              D.age 
+    </code>
+   </pre> 
+
+
+   <pre>
+    <code class="sql">
+          -- SOLO LOS 5 PRIMEROS :) --
+          | Género | Edad | Hogar | Tiempo |
+          |--------|------|-------|--------|
+          | Female | 30   | CA    | 283.57 |
+          | Male   | 30   | NY    | 264.83 |
+          | Male   | 30   | NY    | 186.45 |
+          | Female | 30   | MA    | 284.02 |
+          | Male   | 30   | NZL   | 204.63 | 
+    </code>
+   </pre> 
+
+   <ul>
+    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Realiza una subconsulta escalonada para obtener una lista de los corredores mayores de 25 años que sean mas veloces que los corredores menores de 25 años. Indica cual es el tiempo mínimo que hicieron éstos últimos y después incluye las columnas gender, age y time en tus resultados.</li>
+   </ul>   
+
+
+   <pre>
+    <code class="sql">
+          SELECT 
+              D.gender,
+              D.age,
+              D.[time]
+          FROM 
+              DBO.MaratonNY AS D
+          WHERE 
+              age > 25 AND 
+              time < (SELECT MIN(time) FROM DBO.MaratonNY WHERE age < 25);
+    </code>
+   </pre> 
+
+
+   <pre>
+    <code class="sql">
+          -- SOLO LOS PRIMEROS 5 RESULTADOS :) --
+          | Género | Edad | Tiempo |
+          |--------|------|--------|
+          | Male   | 40   | 163.93 |
+          | Male   | 35   | 164.50 |
+          | Male   | 33   | 177.37 |
+          | Male   | 33   | 175.37 |
+          | Male   | 26   | 173.60 | 
+    </code>
+   </pre> 
+
+   <ul>
+    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">   Realiza una subconsulta de lista para conocer cuales hombres menores de 40 años fueron mas lentos que todas las mujeres menores de 40 años. Ordénalos de forma descendente en base a la columna age.</li>
+   </ul>   
+
+   
+   <pre>
+    <code class="sql">
+            SELECT 
+                D.gender, 
+                D.age, 
+                D.[time]
+            FROM
+                DBO.MaratonNY AS D
+            WHERE 
+                gender = 'Male' AND
+                age < 40 AND time > ALL
+                (SELECT time FROM DBO.MaratonNY WHERE gender = 'Female' AND age < 40)
+            ORDER BY 
+            age DESC;
+    </code>
+   </pre> 
+   
+   <pre>
+    <code class="sql">
+            -- SOLO LOS PRIMEROS 5 RESULTADOS -- 
+            | Género | Edad | Tiempo |
+            |--------|------|--------|
+            | Male   | 35   | 436.23 |
+            | Male   | 33   | 475.37 | 
+    </code>
+   </pre> 
+
+
+
         </div>
+</div>
+
+
+
+
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Capturas</h2>
+        <p>Caputras de Pantalla del Ejercicio</p>
+      </div>
+
+      <div class="row g-0" data-aos="fade-left">
+        
+        <div class="col-lg-4 col-md-4">
+            <a data-fancybox="EJERCICIO_3"
+            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}"
+            >
+          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}" width="350px"/>
+          </a>
+            
+          </div>
+
+          <div class="col-lg-4 col-md-4"> 
+            
+              <a data-fancybox="EJERCICIO_3"
+              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}"
+              >
+            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}" width="350px" />
+          </a>
+            
+          </div>
+
+          <div class="col-lg-4 col-md-4"> 
+              <a data-fancybox="EJERCICIO_3"
+              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}"
+                >
+            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}" width="350px" />
+          </a>
+          </div> 
+              
+          <div class="col-lg-4 col-md-4"> 
+            <a data-fancybox="EJERCICIO_3"
+            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}"
+              >
+          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}" width="350px" />
+        </a>
+        </div> 
+
+         
+
+          <div>
+
+    </div>  
+  </section>
+
+
+
+<!-- ======= Details Section ======= -->
+<section id="ejercicio_4" class="details">
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 4</h2>
+        </div>
+      </div>
+    </div>    
+  </section> 
+</section>
+
+
+<div class="row content" id="ejercicio_4"  >
+
+  <div class="col-md-3 d-flex flex-column justify-content-between">
+    <img src="{{ url_for('static', filename='assets/img/chavo_4.png') }}" class="img-fluid mb-auto" alt=""> 
+    <div class="my-auto"></div>
+   </div>
+  <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+    <h3>Ejercicio 4:</h3>
+    <p class="fst-italic">
+      Enunciado del Ejercicio: 
+    </p>
+    
+      <ul>
+      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Revisa el video de la lectura llamada “Inner Join” para que prepares la base de datos que vamos a analizar, y, mediante la unión de las tablas “Datos_Personales” y “Actividades_Extra”, obtén una lista de los nombres, los correos y la Clase Extra que están tomando los alumnos que se encuentran registrados en alguna de las Actividades Extra-Curriculares. Ordena la lista de forma ascendente en base a la Actividad en la que se encuentran registrados los alumnos.</li>
+     </ul>    
+               
+
+     <pre>
+      <code class="sql">
+          SELECT 
+              D_P.Nombre,
+              D_P.Correo,
+              A_E.Actividad
+          FROM 
+              Datos_Personales AS D_P
+          INNER JOIN 
+              Actividades_Extra AS A_E
+          ON 
+              D_P.Id_num = A_E.Id_num
+          ORDER BY
+              A_E.Actividad
+      </code>
+    </pre>        
+    
+     <pre>
+      <code class="sql">
+              -- SOLO LOS 5 PRIMEROS :) -- 
+              | Nombre | Correo electrónico | Actividad |
+              | --- | --- | --- |
+              | Stanford Sullivan | Shayne_Britton589@gmail.com | Baile |
+              | Shonda Leake | Oliva_Caskey572@gmail.com | Baile |
+              | Orthey Feuerbach | NULL | Canto |
+              | Avenell Rüdiger | uvrguf247@outlook.com | Canto |
+              | Letha Bolt | AbrahamAcevedo@gmail.com | Canto | 
+      </code>
+    </pre>       
+  
+     
+
+      <ul>
+      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Utilizando las Tablas Actividades_Extra y Datos_Personales, obtén una lista de los Números de Identificación de los alumnos que están incluidos en la lista de Actividades Extra-curriculares pero que no se encuentran incluidos en la lista de alumnos de la Tabla Datos_personales
+.</li>
+     </ul>    
+
+     
+      <pre>
+      <code class="sql">
+              SELECT 
+                  A_E.Id_num
+              FROM 
+                  Actividades_Extra AS A_E		
+              LEFT JOIN 
+                  Datos_Personales AS D_P
+              ON 
+                  D_P.Id_num = A_E.Id_num
+              WHERE 
+                  D_P.Id_num IS NULL	
+      </code>
+    </pre>    
+     
+
+    <pre>
+      <code class="sql">
+              Id_num
+              103
+              105
+      </code>
+    </pre>    
+
+
+      <ul>
+      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">  Si todavía no has cargado la información de las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, es momento de hacerlo. Ten especial cuidado al momento de definir el formato de las columnas y asegúrate de que OrderQty se cargue como una variable numérica.<BR>
+Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, obtén una lista de los productos adquiridos por cada uno de los Clientes, incluyendo sus descripciones y las cantidades ordenadas
+
+.</li>
+     </ul>    
+
+
+   <pre>
+      <code class="sql">
+            CREATE VIEW MI_VISTAS AS
+            SELECT
+                C.FirstName,C.LastName,C.CompanyName,C.EmailAddress,
+                OC.OrderQty, OC.PurchaseOrderNumber,
+                P.[Name], P.ProductNumber, P.ProductID
+            FROM
+              dbo.Clientes AS C
+            INNER JOIN 
+              dbo.OrdenesdeCompra as OC
+            ON
+              C.CustomerID = OC.CustomerID
+            INNER JOIN
+              DBO.Productos AS P
+            ON 
+              P.ProductID = OC.ProductID
+                
+            SELECT * FROM MI_VISTAS
+      </code>
+    </pre>    
+
+       <pre>
+      <code class="sql">
+        | Nombre | Apellido | Empresa | Correo electrónico | Cantidad | Número de pedido | Producto | SKU | Precio |
+        | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+        | Catherine | Abel | Professional Sales and Service | catherine0@adventure-works.com | 3 | PO19372114749 | Long-Sleeve Logo Jersey, M | LJ-0192-M | 714 |
+        | Cory | Booth | Remarkable Bike Store | cory0@adventure-works.com | 3 | PO7946145876 | Racing Socks, M | SO-R809-M | 874 |
+        | Christopher | Beck | Bulk Discount Store | christopher1@adventure-works.com | 5 | PO8468183315 | Road-350-W Yellow, 40 | BK-R79Y-40 | 973 |
+        | Donald | Blanton | Coalition Bike Company | donald0@adventure-works.com | 2 | PO4582142611 | Short-Sleeve Classic Jersey, S| SJ-0194-S| 881 |
+        | Walter| Brian| Futuristic Bikes| walter0@adventure-works.com| 2| PO3770176273| ML Mountain Seat/Saddle| SE-M798| 909|
+      </code>
+    </pre>    
+
+
+    <ul>
+      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Utiliza la información obtenida en el punto anterior para saber cuantas unidades se vendieron de cada uno de los productos
+        .</li>
+     </ul>    
+      
+     <pre>
+      <code class="sql">
+          SELECT 
+              V.ProductID , SUM(V.OrderQty) as Total_Unidades_Vendidas
+          FROM
+              MI_VISTAS AS V
+          GROUP BY 
+              V.ProductID;
+      </code>
+    </pre>    
+
+
+    <pre>
+      <code class="sql">
+            -- SOLO LOS 5 PRIMEROS :) --
+            | ProductID | TotalUnitsSold |
+            | --- | --- |
+            | 711 | 6 |
+            | 714 | 3 |
+            | 717 | 1 |
+            | 738 | 5 |
+            | 780 | 5 |
+      </code>
+    </pre>    
+
+
+
+        </div>
+</div>
+
+
+
+
+
+  <section id="gallery" class="gallery">
+    <div class="container">
+
+      <div class="section-title" data-aos="fade-up">
+        <h2>Capturas</h2>
+        <p>Caputras de Pantalla del Ejercicio</p>
+      </div>
+
+      <div class="row g-0" data-aos="fade-left">
+        
+        <div class="col-lg-4 col-md-4">
+            <a data-fancybox="EJERCICIO_4"
+            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}"
+            >
+          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}" width="350px"/>
+          </a>
+            
+          </div>
+
+          <div class="col-lg-4 col-md-4"> 
+            
+              <a data-fancybox="EJERCICIO_4"
+              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}"
+              >
+            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}" width="350px" />
+          </a>
+            
+          </div>
+
+          <div class="col-lg-4 col-md-4"> 
+              <a data-fancybox="EJERCICIO_4"
+              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}"
+                >
+            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}" width="350px" />
+          </a>
+          </div> 
+              
+          <div class="col-lg-4 col-md-4"> 
+            <a data-fancybox="EJERCICIO_4"
+            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}"
+              >
+          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}" width="350px" />
+        </a>
+        </div> 
+
+         
+
+          <div>
+
+    </div>  
+  </section>
+  
+  
+
+
+
+
+
+
+
+
+
+
 
       </div>
     </section><!-- End Details Section -->
       </div>
     
+
+
+
+
 
 
 
@@ -1210,7 +1849,19 @@
     l10n : Fancybox.l10n.de
   }); 
 
-  
+  Fancybox.bind('[data-fancybox="EJERCICIO_2"]', {
+    l10n : Fancybox.l10n.de
+  }); 
+
+  Fancybox.bind('[data-fancybox="EJERCICIO_3"]', {
+    l10n : Fancybox.l10n.de
+  }); 
+
+  Fancybox.bind('[data-fancybox="EJERCICIO_4"]', {
+    l10n : Fancybox.l10n.de
+  }); 
+
+
 </script>
 
 
