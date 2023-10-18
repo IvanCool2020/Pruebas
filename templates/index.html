@@ -115,6 +115,11 @@
     </div>
   </header><!-- End Header -->
 
+
+
+
+
+
   <!-- ======= Hero Section ======= -->
   <section id="hero">
 
@@ -154,83 +159,14 @@
 
   </section><!-- End Hero -->
 
+
+
+
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-   
-
-    <!--
-    <section id="ejercicio_1" class="ejercicio_1">
-      <div class="container-fluid">
-
-        <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="{{ url_for('static', filename='assets/video/presentacion.mp4') }}"   class="glightbox play-btn mb-4"></a>
-          </div>
-
-          <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5" data-aos="fade-left">
-            <h3>Ejercicio 1</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-           
-            <pre><code class="language-python hljs code">
-              from flask import Flask, render_template
-              import seaborn as sns
-              import matplotlib.pyplot as plt
-
-              app = Flask(__name__)
-
-              def create_plot():
-                  tips = sns.load_dataset("tips")
-                  sns_plot = sns.relplot(x="total_bill", y="tip", data=tips)
-                  sns_plot.savefig('static/plot.png')
-
-              @app.route('/')
-              def home():
-                  message="Hola a todos"
-                  return render_template('index.html',message=message)
-              </code></pre>
-              
-              <style>
-                .hljs.result {
-                    background: #f0f0f0; /* Cambia esto al color de fondo que desees para el resultado */
-                    color: #000000; /* Cambia esto al color de texto que desees para el resultado */
-                }
-              </style>
-
-              <script>
-                hljs.highlightAll();
-              </script>
-            
-
  
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
 
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-
-            <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-            </div>
-            
-          </div>
-        </div>
-
-      </div>
-    </section>
-     
-     -->
-
-
-    <!-- ======= Features Section ======= -->
+    <!-- ======= LISTA DE EJERCICIOS======= -->
     <section id="features" class="features">
       <div class="container">
 
@@ -319,56 +255,13 @@
    
 
 
-    <!--
-    <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row" data-aos="fade-up">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Happy Clients</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Projects</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hours Of Support</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Hard Workers</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-    -->
-    
- 
-
-
+    <!-- EJERCICIOS -->
 
 
       <div class="container">
+
+  
+              <!-- EJERCICIO 1  -->
 
               <!-- ======= Details Section ======= -->
               <section id="ejercicio_1" class="details">
@@ -383,379 +276,595 @@
                 </section> 
               </section>
 
+                <div class="row content">
+                  <div class="col-md-3 d-flex flex-column justify-content-between">
+                    <img src="{{ url_for('static', filename='assets/img/chavo_1.png') }}" class="img-fluid mb-auto" alt=""> 
+                    <div class="my-auto"></div>
+                  </div>
+                  
+                  <div class="col-md-9 pt-4" data-aos="fade-up">
+                    <h3>Ejercicio 1 :</h3>
+                    <p class="fst-italic">
+                      Enunciado del Ejercicio: 
+                    </p>
+                    <ul>
+                      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando los comandos CREATE DATABASE, CREATE TABLE e INSERT INTO, crea una base de datos llamada "Ferretería" que contenga dos tablas, una llamada "Inventario" y otra llamada "Proveedores".</li> 
+                      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Cada tabla debe contener al menos con cinco filas.</li>
+                      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Para la tabla "Inventario" crea un campo cuyos valores comiencen en 1 y vayan incrementando de uno en uno automáticamente y utiliza este campo como llave primaria. Agrega además los campos "Descripción", "Inventario_Minimo" y "Proveedor".</li>
+                      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> La tabla "Proveedores" deberá contener los campos "Proveedor" (el cual contendrá la misma información que el campo "Proveedor" de la tabla "Inventario"), "Teléfono" y "Tiempo de Entrega", que será la cantidad de días hábiles que el proveedor tarda en entregar el material a la Ferretería.</li>
+                    </ul>
+                              
+
+                    <pre><code class="sql">
+                      CREATE DATABASE FERRETERIA;
+                      
+                      USE FERRETERIA;
+                      
+                      CREATE TABLE Inventario
+                          (
+                            ID INT IDENTITY(1,1),  
+                            Descripcion VARCHAR(255),
+                            Inventario_Minimo INT,
+                            Proveedor VARCHAR(255),
+                            PRIMARY KEY(ID)
+                          );
+                      
+                      CREATE TABLE Proveedores
+                          (
+                            Proveedores varchar(255),
+                            telefono varchar(30),
+                            Tiempo_de_Entrega int
+                          );
+                      
+                      
+                      INSERT INTO Inventario
+                          (Descripcion,Inventario_Minimo,Proveedor )
+                            values				
+                                ('Producto 1', 10, 'Proveedor 1'),
+                                ('Producto 2', 20, 'Proveedor 2'),
+                                ('Producto 3', 30, 'Proveedor 3'),
+                                ('Producto 4', 40, 'Proveedor 4'),
+                                ('Producto 5', 50, 'Proveedor 5')
+                      
+                      INSERT INTO Proveedores 
+                          (Proveedores,telefono,Tiempo_de_Entrega )
+                              values
+                                  ('Proveedor 1', '1234567890', 2),
+                                  ('Proveedor 2', '0987654321', 3),
+                                  ('Proveedor 3', '1122334455', 4),
+                                  ('Proveedor 4', '5566778899', 5),
+                                  ('Proveedor 5', '2233445566', 6);
+                          </code></pre>
+
+                  </div>
+
+                  
+                
 
 
+                  <!-- ======= Gallery Section ======= -->
+            <section id="gallery" class="gallery">
+              <div class="container">
 
+                <div class="section-title" data-aos="fade-up">
+                  <h2>Capturas</h2>
+                  <p>Caputras de Pantalla del Ejercicio</p>
+                </div>
 
-        <div class="row content">
-          <div class="col-md-3 d-flex flex-column justify-content-between">
-            <img src="{{ url_for('static', filename='assets/img/chavo_1.png') }}" class="img-fluid mb-auto" alt=""> 
-            <div class="my-auto"></div>
-           </div>
-          
-          <div class="col-md-9 pt-4" data-aos="fade-up">
-            <h3>Ejercicio 1 :</h3>
-            <p class="fst-italic">
-              Enunciado del Ejercicio: 
-            </p>
-            <ul>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando los comandos CREATE DATABASE, CREATE TABLE e INSERT INTO, crea una base de datos llamada "Ferretería" que contenga dos tablas, una llamada "Inventario" y otra llamada "Proveedores".</li> 
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Cada tabla debe contener al menos con cinco filas.</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Para la tabla "Inventario" crea un campo cuyos valores comiencen en 1 y vayan incrementando de uno en uno automáticamente y utiliza este campo como llave primaria. Agrega además los campos "Descripción", "Inventario_Minimo" y "Proveedor".</li>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> La tabla "Proveedores" deberá contener los campos "Proveedor" (el cual contendrá la misma información que el campo "Proveedor" de la tabla "Inventario"), "Teléfono" y "Tiempo de Entrega", que será la cantidad de días hábiles que el proveedor tarda en entregar el material a la Ferretería.</li>
-            </ul>
-                       
+                <div class="row g-0" data-aos="fade-left">
 
-            <pre><code class="sql">
-              CREATE DATABASE FERRETERIA;
-              
-              USE FERRETERIA;
-              
-              CREATE TABLE Inventario
-                  (
-                    ID INT IDENTITY(1,1),  
-                    Descripcion VARCHAR(255),
-                    Inventario_Minimo INT,
-                    Proveedor VARCHAR(255),
-                    PRIMARY KEY(ID)
-                  );
-              
-              CREATE TABLE Proveedores
-                  (
-                    Proveedores varchar(255),
-                    telefono varchar(30),
-                    Tiempo_de_Entrega int
-                  );
-              
-              
-              INSERT INTO Inventario
-                  (Descripcion,Inventario_Minimo,Proveedor )
-                    values				
-                        ('Producto 1', 10, 'Proveedor 1'),
-                        ('Producto 2', 20, 'Proveedor 2'),
-                        ('Producto 3', 30, 'Proveedor 3'),
-                        ('Producto 4', 40, 'Proveedor 4'),
-                        ('Producto 5', 50, 'Proveedor 5')
-              
-              INSERT INTO Proveedores 
-                   (Proveedores,telefono,Tiempo_de_Entrega )
-                       values
-                          ('Proveedor 1', '1234567890', 2),
-                          ('Proveedor 2', '0987654321', 3),
-                          ('Proveedor 3', '1122334455', 4),
-                          ('Proveedor 4', '5566778899', 5),
-                          ('Proveedor 5', '2233445566', 6);
-                  </code></pre>
-
-          </div>
-
-          
-         
-
-
-           <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Capturas</h2>
-          <p>Caputras de Pantalla del Ejercicio</p>
-        </div>
-
-        <div class="row g-0" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_1_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_1_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-            
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_2_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_2_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-            
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_3_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_3_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-          </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_4_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_4_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-            
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_5_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_5_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-            
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
-              <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_6_Ejercicio_1.png') }}" class="gallery-lightbox">
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_6_Ejercicio_1.png') }}" class="img-fluid" alt="">
-            </a>
-            
-            </div>
-          </div>
-
-          
-
-        </div>
-
-      </div>
- 
-    </section><!-- End Gallery Section -->
-     
-
-
-
-
-
-    <div class="container">
-
-    
-
-     <!-- ======= Details Section ======= -->
-            <section id="ejercicio_2" class="details">
-              <section id="testimonials" class="testimonials">
-                <div class="container">
-                  <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                      <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 2</h2>
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_1_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_1_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                    
                     </div>
                   </div>
-                </div>    
-              </section> 
-            </section>
 
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="150">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_2_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_2_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                    
+                    </div>
+                  </div>
 
-     
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_3_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_3_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                  </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="250">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_4_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_4_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                    
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_5_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_5_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                    
+                    </div>
+                  </div>
 
+                  <div class="col-lg-3 col-md-4">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="350">
+                      <a href="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_6_Ejercicio_1.png') }}" class="gallery-lightbox">
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_1/captura_6_Ejercicio_1.png') }}" class="img-fluid" alt="">
+                    </a>
+                    
+                    </div>
+                  </div>
 
-
-        <div class="row content" id="ejercicio_2"  >
-
-          <div class="col-md-3 d-flex flex-column justify-content-between">
-            <img src="{{ url_for('static', filename='assets/img/chavo_2.png') }}" class="img-fluid mb-auto" alt=""> 
-            <div class="my-auto"></div>
-           </div>
-          <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
-            <h3>Ejercicio 2 :</h3>
-            <p class="fst-italic">
-              Enunciado del Ejercicio: 
-            </p>
-            <ul>
-              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Carga el archivo PODateTime.csv que viene en la carpeta recursos del curso siguiendo las instrucciones que ya vimos anteriormente.
-                Una vez que lo hayas cargado, genera una consulta en la que extraigas el año en el que fueron colocadas las órdenes que comienzan con PO5. Incluye dichas órdenes de compra en tus resultados.</li>
-             </ul>    
-                       
-
-          <pre>
-              <code class="sql">
-            use Pruebas
-
-            SELECT   
-                D.PurchaseOrderNumber AS [ORDEN DE COMPRA],
-                YEAR(D.FECHA) AS [AÑO]
-                FROM
-            dbo.DATASET_FECHAS as D
-                WHERE 
-                D.PurchaseOrderNumber LIKE 'PO5%'
-              </code>
-          </pre>        
-          <pre>
-              <code class="sql">
-                | ORDEN DE COMPRA | AÑO |
-                |-----------------|-----|
-                | PO5539125166    | 2021|
-                | PO5713190501    | 2021|
-              </code>
-          </pre>
-          
-
-       <ul>
-          <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>  
-        </ul>
-
-        <pre>
-          <code class="sql">
-            CREATE DATABASE MARATON
-
-            USE MARATON
-            
-            SELECT  * 
-                FROM DBO.MaratonNY AS D
-            WHERE 
-                D.gender ='Male' AND
-                D.age >= 60      AND
-                D.TIME < 200 
-          </code>
-      </pre>        
-
-      <pre>
-        <code class="sql">
-          -- SOLO LOS 10 PRIMEROS RESULTADOS  :) --
-          | Corredor | Place | Género | Edad | Lugar de origen | Tiempo |
-          |----------|-------|--------|------|-----------------|--------|
-          | 23043    | 23413 | Male   | 71   | FL             | 414.70 |
-          | 23128    | 23499 | Male   | 67   | GA             | 431.62 |
-          | 15203    | 15480 | Male   | 69   | FRA            | 276.50 |
-          | 11424    | 11659 | Male   | 60   | NY             | 262.77 |
-          | 22743    | 23112 | Male   | 81   | ITA            | 389.00 |
-          | 7941     | 8133  | Male   | 61   | FRA            | 244.30 |
-          | 20736    | 21085 | Male   | 61   | FL             | 326.70 |
-          | 23145    | 23516 | Male   | 76   | NY             | 430.82 |
-          | 23230    | 23602 | Male   | 73   | NY             | 460.80 |
-          | 20669    | 21018 | Male   | 70   | JPN            | 322.98 |
-        </code>
-    </pre>        
-
-
-
-        <ul>
-           <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
-     
-        </ul>
-
-
-        <pre>
-          <code class="sql">
-            SELECT  
-                D.HOME AS PAIS,
-                COUNT(*) AS CUENTA
-                FROM DBO.MaratonNY AS D
-            WHERE 
-                D.gender ='Female' 
-            GROUP BY
-                D.home  
-            ORDER BY 
-                COUNT(*) DESC	
-          </code>
-      </pre>        
-
- 
-
-        <pre>
-          <code class="sql">
-            -- SOLO LOS 10 PRIMEROS :)  -- 
-            | PAIS | CUENTA |
-            |------|--------|
-            | NY   | 104    |
-            | GBR  | 24     |
-            | NJ   | 19     |
-            | CA   | 16     |
-            | FRA  | 12     |
-            | GER  | 9      |
-            | CAN  | 9      |
-            | CT   | 9      |
-            | MA   | 9      |
-            | TX   | 8      |
-          </code>
-      </pre>    
-        
-
-      <ul>
-        <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
- 
-       </ul>
-       
-       <pre>
-        <code class="sql">
-          SELECT  
-                  D.HOME AS PAIS,
-                COUNT(*) AS CUENTA
-              FROM DBO.MaratonNY AS D
-          WHERE 
-                D.gender ='Female'  
-          GROUP BY
-              D.home  
-          HAVING
-                COUNT(*) > 10
-          ORDER BY 
-                COUNT(*) DESC
-        </code>
-    </pre>    
-
-     
-    <pre>
-      <code class="sql"> 
-        | PAIS | CUENTA |
-        |------|--------|
-        | NY   | 104    |
-        | GBR  | 24     |
-        | NJ   | 19     |
-        | CA   | 16     |
-        | FRA  | 12     |
-      </code>
-  </pre>    
-
-
-        <ul>
-           <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
-    
-       </ul>
-
-       
-       <pre>
-        <code class="sql">
-        SELECT  
-            home AS 'País',
-            COUNT(*) AS 'Cantidad de Participantes',
-            MIN(age) AS 'Edad Mínima',
-            MAX(age) AS 'Edad Máxima',
-            AVG(age) AS 'Edad Promedio'
-        FROM 
-            DBO.MaratonNY
-        GROUP BY 
-            home
-        ORDER BY 
-            MAX(age) DESC  
-        </code>
-    </pre>    
-    
-    <pre>
-      <code class="sql">
-        -- SOLO LOS PRIMEROS 5 RESULTADOS :) -- 
-        | País | Cantidad de Participantes | Edad Mínima | Edad Máxima | Edad Promedio |
-        |------|---------------------------|-------------|-------------|---------------|
-        | ITA  | 52                        | 23          | 81          | 43            |
-        | NY   | 284                       | 21          | 76          | 37            |
-        | NJ   | 61                        | 21          | 73          | 39            |
-        | ID   | 1                         | 72          | 72          | 72            |
-        | ARG  | 3                         | 33          | 72          | 46            |
-       </code>
-  </pre>    
- 
-  
+                  
 
                 </div>
-        </div>
+
+              </div>
+        
+            </section><!-- End Gallery Section -->
+            
+
+            
 
 
+
+            <div class="container">
+
+            
+             <!-- EJERCICIO 2  -->
+
+            <!-- ======= Details Section ======= -->
+                    <section id="ejercicio_2" class="details">
+                      <section id="testimonials" class="testimonials">
+                        <div class="container">
+                          <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                              <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 2</h2>
+                            </div>
+                          </div>
+                        </div>    
+                      </section> 
+                    </section>
+  
+
+                <div class="row content" id="ejercicio_2"  >
+
+                  <div class="col-md-3 d-flex flex-column justify-content-between">
+                    <img src="{{ url_for('static', filename='assets/img/chavo_2.png') }}" class="img-fluid mb-auto" alt=""> 
+                    <div class="my-auto"></div>
+                  </div>
+                  <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+                    <h3>Ejercicio 2 :</h3>
+                    <p class="fst-italic">
+                      Enunciado del Ejercicio: 
+                    </p>
+                    <ul>
+                      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Carga el archivo PODateTime.csv que viene en la carpeta recursos del curso siguiendo las instrucciones que ya vimos anteriormente.
+                        Una vez que lo hayas cargado, genera una consulta en la que extraigas el año en el que fueron colocadas las órdenes que comienzan con PO5. Incluye dichas órdenes de compra en tus resultados.</li>
+                    </ul>    
+                              
+
+                  <pre>
+                      <code class="sql">
+                    use Pruebas
+
+                    SELECT   
+                        D.PurchaseOrderNumber AS [ORDEN DE COMPRA],
+                        YEAR(D.FECHA) AS [AÑO]
+                        FROM
+                    dbo.DATASET_FECHAS as D
+                        WHERE 
+                        D.PurchaseOrderNumber LIKE 'PO5%'
+                      </code>
+                  </pre>        
+                  <pre>
+                      <code class="sql">
+                        | ORDEN DE COMPRA | AÑO |
+                        |-----------------|-----|
+                        | PO5539125166    | 2021|
+                        | PO5713190501    | 2021|
+                      </code>
+                  </pre>
+                  
+
+              <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Crea una base de datos llamada Maratón y carga dentro de ella el archivo Maraton NY.csv llamando a la tabla MaratonNY, y obtén una lista de los competidores de sexo masculino, que tengan 60 o más años y que hayan llegado a la meta en menos de 200 minutos.</li>  
+                </ul>
+
+                <pre>
+                  <code class="sql">
+                    CREATE DATABASE MARATON
+
+                    USE MARATON
+                    
+                    SELECT  * 
+                        FROM DBO.MaratonNY AS D
+                    WHERE 
+                        D.gender ='Male' AND
+                        D.age >= 60      AND
+                        D.TIME < 200 
+                  </code>
+              </pre>        
+
+              <pre>
+                <code class="sql">
+                  -- SOLO LOS 10 PRIMEROS RESULTADOS  :) --
+                  | Corredor | Place | Género | Edad | Lugar de origen | Tiempo |
+                  |----------|-------|--------|------|-----------------|--------|
+                  | 23043    | 23413 | Male   | 71   | FL             | 414.70 |
+                  | 23128    | 23499 | Male   | 67   | GA             | 431.62 |
+                  | 15203    | 15480 | Male   | 69   | FRA            | 276.50 |
+                  | 11424    | 11659 | Male   | 60   | NY             | 262.77 |
+                  | 22743    | 23112 | Male   | 81   | ITA            | 389.00 |
+                  | 7941     | 8133  | Male   | 61   | FRA            | 244.30 |
+                  | 20736    | 21085 | Male   | 61   | FL             | 326.70 |
+                  | 23145    | 23516 | Male   | 76   | NY             | 430.82 |
+                  | 23230    | 23602 | Male   | 73   | NY             | 460.80 |
+                  | 20669    | 21018 | Male   | 70   | JPN            | 322.98 |
+                </code>
+            </pre>        
+
+
+
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Utilizando la misma tabla MaratonNY que creaste en el punto número 2, crea una lista que contenga la cantidad de mujeres provenientes de cada pais que participaron el maratón y ordénala según las cantidades en forma descendente.</li>
+            
+                </ul>
+
+
+                <pre>
+                  <code class="sql">
+                    SELECT  
+                        D.HOME AS PAIS,
+                        COUNT(*) AS CUENTA
+                        FROM DBO.MaratonNY AS D
+                    WHERE 
+                        D.gender ='Female' 
+                    GROUP BY
+                        D.home  
+                    ORDER BY 
+                        COUNT(*) DESC	
+                  </code>
+              </pre>        
+
+        
+
+                <pre>
+                  <code class="sql">
+                    -- SOLO LOS 10 PRIMEROS :)  -- 
+                    | PAIS | CUENTA |
+                    |------|--------|
+                    | NY   | 104    |
+                    | GBR  | 24     |
+                    | NJ   | 19     |
+                    | CA   | 16     |
+                    | FRA  | 12     |
+                    | GER  | 9      |
+                    | CAN  | 9      |
+                    | CT   | 9      |
+                    | MA   | 9      |
+                    | TX   | 8      |
+                  </code>
+              </pre>    
+                
+
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
+        
+              </ul>
+              
+              <pre>
+                <code class="sql">
+                  SELECT  
+                          D.HOME AS PAIS,
+                        COUNT(*) AS CUENTA
+                      FROM DBO.MaratonNY AS D
+                  WHERE 
+                        D.gender ='Female'  
+                  GROUP BY
+                      D.home  
+                  HAVING
+                        COUNT(*) > 10
+                  ORDER BY 
+                        COUNT(*) DESC
+                </code>
+            </pre>    
+
+            
+            <pre>
+              <code class="sql"> 
+                | PAIS | CUENTA |
+                |------|--------|
+                | NY   | 104    |
+                | GBR  | 24     |
+                | NJ   | 19     |
+                | CA   | 16     |
+                | FRA  | 12     |
+              </code>
+          </pre>    
+
+
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"></i> Obtén la cantidad de participantes por pais, la edad mínima, la edad máxima y la edad promedio de los mismos por cada uno de los países. Ordena la información de manera Descendente en base a la edad máxima por pais para descubrir la procedencia de los participantes de mayor edad en el Maratón de Nueva York.</li>
+            
+              </ul>
+
+              
+              <pre>
+                <code class="sql">
+                SELECT  
+                    home AS 'País',
+                    COUNT(*) AS 'Cantidad de Participantes',
+                    MIN(age) AS 'Edad Mínima',
+                    MAX(age) AS 'Edad Máxima',
+                    AVG(age) AS 'Edad Promedio'
+                FROM 
+                    DBO.MaratonNY
+                GROUP BY 
+                    home
+                ORDER BY 
+                    MAX(age) DESC  
+                </code>
+            </pre>    
+            
+            <pre>
+              <code class="sql">
+                -- SOLO LOS PRIMEROS 5 RESULTADOS :) -- 
+                | País | Cantidad de Participantes | Edad Mínima | Edad Máxima | Edad Promedio |
+                |------|---------------------------|-------------|-------------|---------------|
+                | ITA  | 52                        | 23          | 81          | 43            |
+                | NY   | 284                       | 21          | 76          | 37            |
+                | NJ   | 61                        | 21          | 73          | 39            |
+                | ID   | 1                         | 72          | 72          | 72            |
+                | ARG  | 3                         | 33          | 72          | 46            |
+              </code>
+          </pre>    
+        
+          
+
+                        </div>
+                </div>
 
  
 
+                  <section id="gallery" class="gallery">
+                    <div class="container">
+
+                      <div class="section-title" data-aos="fade-up">
+                        <h2>Capturas</h2>
+                        <p>Caputras de Pantalla del Ejercicio</p>
+                      </div>
+
+                      <div class="row g-0" data-aos="fade-left">
+                        
+                        <div class="col-lg-4 col-md-4">
+                            <a data-fancybox="EJERCICIO_2"
+                            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}"
+                            >
+                          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}" width="350px"/>
+                          </a>
+                            
+                          </div>
+
+                          <div class="col-lg-4 col-md-4"> 
+                            
+                              <a data-fancybox="EJERCICIO_2"
+                              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}"
+                              >
+                            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}" width="350px" />
+                          </a>
+                            
+                          </div>
+
+                          <div class="col-lg-4 col-md-4"> 
+                              <a data-fancybox="EJERCICIO_2"
+                              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}"
+                                >
+                            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}" width="350px" />
+                          </a>
+                          </div> 
+                              
+                          <div class="col-lg-4 col-md-4"> 
+                            <a data-fancybox="EJERCICIO_2"
+                            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}"
+                              >
+                          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}" width="350px" />
+                        </a>
+                        </div> 
+
+                        <div class="col-lg-4 col-md-4"> 
+                          <a data-fancybox="EJERCICIO_2"
+                          data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}"
+                            >
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}" width="350px" />
+                      </a>
+                      </div> 
+
+                          <div>
+
+                    </div>  
+                  </section>
+
+
+    
+          <!-- EJERCICIO 3  -->
+          <section id="ejercicio_3" class="details">
+            <section id="testimonials" class="testimonials">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 3</h2>
+                  </div>
+                </div>
+              </div>    
+            </section> 
+          </section>
+
+          <div class="row content" id="ejercicio_3"  >
+
+            <div class="col-md-3 d-flex flex-column justify-content-between">
+              <img src="{{ url_for('static', filename='assets/img/chavo_3.png') }}" class="img-fluid mb-auto" alt=""> 
+              <div class="my-auto"></div>
+            </div>
+            <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+              <h3>Ejercicio 3:</h3>
+              <p class="fst-italic">
+                Enunciado del Ejercicio: 
+              </p>
+              <p class="fst-italic">
+                Para llevar a cabo esta tarea, vamos a utilizar la tabla MaratonNY que se encuentra en la base de datos Maraton. Teniendo esto en cuenta realiza lo siguiente:
+              </p>
+                <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Obtén el tiempo que le tomó llegar a la meta a cada una de las mujeres provenientes de NY. Muestra las columnas gender, age, home y time en los resultados y ordénalos de forma ascendente en base a los valores de la columna time.</li>
+              </ul>    
+                        
+
+              <pre>
+                <code class="sql">
+                      SELECT 
+                          D.gender,
+                          D.age, 
+                          D.home,
+                          D.[time] 
+                      FROM
+                          DBO.MaratonNY AS D
+                      WHERE 
+                          D.gender = 'Female' AND
+                          D.home='NY'
+                      ORDER BY D.time ASC
+                </code>
+              </pre>        
+
+            <pre>
+              <code class="sql">
+                      -- SOLO LOS 5 PRIMEROS --
+                      | Género | Edad | Hogar | Tiempo |
+                      |--------|------|-------|--------|
+                      | Female | 26   | NY    | 175.53 |
+                      | Female | 35   | NY    | 194.95 |
+                      | Female | 30   | NY    | 204.93 |
+                      | Female | 32   | NY    | 207.15 |
+                      | Female | 23   | NY    | 217.48 |
+                </code>
+            </pre>        
+
+            
+            <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Crea una lista con los hombres menores de 30 años y de las mujeres que tengan entre 30 y 40 años. Incluye las columnas gender, age y home. Ordena la lista en base a la edad.</li>
+            </ul>   
+
+            
+            <pre>
+              <code class="sql">
+                    SELECT 
+                        D.gender,
+                        D.age, 
+                        D.home,
+                        D.[time] 
+                    FROM 
+                        DBO.MaratonNY AS D
+                    WHERE 
+                        D.age BETWEEN 30 AND 40
+                    ORDER BY
+                        D.age 
+              </code>
+            </pre> 
+
+
+            <pre>
+              <code class="sql">
+                    -- SOLO LOS 5 PRIMEROS :) --
+                    | Género | Edad | Hogar | Tiempo |
+                    |--------|------|-------|--------|
+                    | Female | 30   | CA    | 283.57 |
+                    | Male   | 30   | NY    | 264.83 |
+                    | Male   | 30   | NY    | 186.45 |
+                    | Female | 30   | MA    | 284.02 |
+                    | Male   | 30   | NZL   | 204.63 | 
+              </code>
+            </pre> 
+
+            <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Realiza una subconsulta escalonada para obtener una lista de los corredores mayores de 25 años que sean mas veloces que los corredores menores de 25 años. Indica cual es el tiempo mínimo que hicieron éstos últimos y después incluye las columnas gender, age y time en tus resultados.</li>
+            </ul>   
+
+
+            <pre>
+              <code class="sql">
+                    SELECT 
+                        D.gender,
+                        D.age,
+                        D.[time]
+                    FROM 
+                        DBO.MaratonNY AS D
+                    WHERE 
+                        age > 25 AND 
+                        time < (SELECT MIN(time) FROM DBO.MaratonNY WHERE age < 25);
+              </code>
+            </pre> 
+
+
+            <pre>
+              <code class="sql">
+                    -- SOLO LOS PRIMEROS 5 RESULTADOS :) --
+                    | Género | Edad | Tiempo |
+                    |--------|------|--------|
+                    | Male   | 40   | 163.93 |
+                    | Male   | 35   | 164.50 |
+                    | Male   | 33   | 177.37 |
+                    | Male   | 33   | 175.37 |
+                    | Male   | 26   | 173.60 | 
+              </code>
+            </pre> 
+
+            <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">   Realiza una subconsulta de lista para conocer cuales hombres menores de 40 años fueron mas lentos que todas las mujeres menores de 40 años. Ordénalos de forma descendente en base a la columna age.</li>
+            </ul>   
+
+            
+            <pre>
+              <code class="sql">
+                      SELECT 
+                          D.gender, 
+                          D.age, 
+                          D.[time]
+                      FROM
+                          DBO.MaratonNY AS D
+                      WHERE 
+                          gender = 'Male' AND
+                          age < 40 AND time > ALL
+                          (SELECT time FROM DBO.MaratonNY WHERE gender = 'Female' AND age < 40)
+                      ORDER BY 
+                      age DESC;
+              </code>
+            </pre> 
+            
+            <pre>
+              <code class="sql">
+                      -- SOLO LOS PRIMEROS 5 RESULTADOS -- 
+                      | Género | Edad | Tiempo |
+                      |--------|------|--------|
+                      | Male   | 35   | 436.23 |
+                      | Male   | 33   | 475.37 | 
+              </code>
+            </pre> 
+
+
+
+                  </div>
+          </div>
+  
           <section id="gallery" class="gallery">
             <div class="container">
 
@@ -767,47 +876,41 @@
               <div class="row g-0" data-aos="fade-left">
                 
                 <div class="col-lg-4 col-md-4">
-                    <a data-fancybox="EJERCICIO_2"
-                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}"
+                    <a data-fancybox="EJERCICIO_3"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}"
                     >
-                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_1.png') }}" width="350px"/>
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}" width="350px"/>
                   </a>
                     
                   </div>
 
                   <div class="col-lg-4 col-md-4"> 
                     
-                      <a data-fancybox="EJERCICIO_2"
-                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}"
+                      <a data-fancybox="EJERCICIO_3"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}"
                       >
-                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_2.png') }}" width="350px" />
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}" width="350px" />
                   </a>
                     
                   </div>
 
                   <div class="col-lg-4 col-md-4"> 
-                      <a data-fancybox="EJERCICIO_2"
-                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}"
+                      <a data-fancybox="EJERCICIO_3"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}"
                         >
-                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_3.png') }}" width="350px" />
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}" width="350px" />
                   </a>
                   </div> 
                       
                   <div class="col-lg-4 col-md-4"> 
-                    <a data-fancybox="EJERCICIO_2"
-                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}"
+                    <a data-fancybox="EJERCICIO_3"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}"
                       >
-                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_4.png') }}" width="350px" />
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}" width="350px" />
                 </a>
                 </div> 
 
-                <div class="col-lg-4 col-md-4"> 
-                  <a data-fancybox="EJERCICIO_2"
-                  data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}"
-                    >
-                <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_2/CAPTURA_5.png') }}" width="350px" />
-              </a>
-              </div> 
+                
 
                   <div>
 
@@ -816,739 +919,550 @@
 
 
 
- <!-- ======= Details Section ======= -->
- <section id="ejercicio_3" class="details">
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 3</h2>
-        </div>
-      </div>
-    </div>    
-  </section> 
-</section>
-
-<div class="row content" id="ejercicio_3"  >
-
-  <div class="col-md-3 d-flex flex-column justify-content-between">
-    <img src="{{ url_for('static', filename='assets/img/chavo_3.png') }}" class="img-fluid mb-auto" alt=""> 
-    <div class="my-auto"></div>
-   </div>
-  <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
-    <h3>Ejercicio 3:</h3>
-    <p class="fst-italic">
-      Enunciado del Ejercicio: 
-    </p>
-    <p class="fst-italic">
-      Para llevar a cabo esta tarea, vamos a utilizar la tabla MaratonNY que se encuentra en la base de datos Maraton. Teniendo esto en cuenta realiza lo siguiente:
-    </p>
-      <ul>
-      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Obtén el tiempo que le tomó llegar a la meta a cada una de las mujeres provenientes de NY. Muestra las columnas gender, age, home y time en los resultados y ordénalos de forma ascendente en base a los valores de la columna time.</li>
-     </ul>    
-               
-
-     <pre>
-      <code class="sql">
-            SELECT 
-                D.gender,
-                D.age, 
-                D.home,
-                D.[time] 
-            FROM
-                DBO.MaratonNY AS D
-            WHERE 
-                D.gender = 'Female' AND
-                D.home='NY'
-            ORDER BY D.time ASC
-      </code>
-    </pre>        
-
-  <pre>
-    <code class="sql">
-            -- SOLO LOS 5 PRIMEROS --
-            | Género | Edad | Hogar | Tiempo |
-            |--------|------|-------|--------|
-            | Female | 26   | NY    | 175.53 |
-            | Female | 35   | NY    | 194.95 |
-            | Female | 30   | NY    | 204.93 |
-            | Female | 32   | NY    | 207.15 |
-            | Female | 23   | NY    | 217.48 |
-      </code>
-   </pre>        
-
-   
-   <ul>
-    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Crea una lista con los hombres menores de 30 años y de las mujeres que tengan entre 30 y 40 años. Incluye las columnas gender, age y home. Ordena la lista en base a la edad.</li>
-   </ul>   
-
-  
-   <pre>
-    <code class="sql">
-          SELECT 
-              D.gender,
-              D.age, 
-              D.home,
-              D.[time] 
-          FROM 
-              DBO.MaratonNY AS D
-          WHERE 
-              D.age BETWEEN 30 AND 40
-          ORDER BY
-              D.age 
-    </code>
-   </pre> 
+         <!-- EJERCICIO 4 -->
+        <section id="ejercicio_4" class="details">
+          <section id="testimonials" class="testimonials">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 4</h2>
+                </div>
+              </div>
+            </div>    
+          </section> 
+        </section>
 
 
-   <pre>
-    <code class="sql">
-          -- SOLO LOS 5 PRIMEROS :) --
-          | Género | Edad | Hogar | Tiempo |
-          |--------|------|-------|--------|
-          | Female | 30   | CA    | 283.57 |
-          | Male   | 30   | NY    | 264.83 |
-          | Male   | 30   | NY    | 186.45 |
-          | Female | 30   | MA    | 284.02 |
-          | Male   | 30   | NZL   | 204.63 | 
-    </code>
-   </pre> 
+        <div class="row content" id="ejercicio_4"  >
 
-   <ul>
-    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Realiza una subconsulta escalonada para obtener una lista de los corredores mayores de 25 años que sean mas veloces que los corredores menores de 25 años. Indica cual es el tiempo mínimo que hicieron éstos últimos y después incluye las columnas gender, age y time en tus resultados.</li>
-   </ul>   
-
-
-   <pre>
-    <code class="sql">
-          SELECT 
-              D.gender,
-              D.age,
-              D.[time]
-          FROM 
-              DBO.MaratonNY AS D
-          WHERE 
-              age > 25 AND 
-              time < (SELECT MIN(time) FROM DBO.MaratonNY WHERE age < 25);
-    </code>
-   </pre> 
-
-
-   <pre>
-    <code class="sql">
-          -- SOLO LOS PRIMEROS 5 RESULTADOS :) --
-          | Género | Edad | Tiempo |
-          |--------|------|--------|
-          | Male   | 40   | 163.93 |
-          | Male   | 35   | 164.50 |
-          | Male   | 33   | 177.37 |
-          | Male   | 33   | 175.37 |
-          | Male   | 26   | 173.60 | 
-    </code>
-   </pre> 
-
-   <ul>
-    <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">   Realiza una subconsulta de lista para conocer cuales hombres menores de 40 años fueron mas lentos que todas las mujeres menores de 40 años. Ordénalos de forma descendente en base a la columna age.</li>
-   </ul>   
-
-   
-   <pre>
-    <code class="sql">
-            SELECT 
-                D.gender, 
-                D.age, 
-                D.[time]
-            FROM
-                DBO.MaratonNY AS D
-            WHERE 
-                gender = 'Male' AND
-                age < 40 AND time > ALL
-                (SELECT time FROM DBO.MaratonNY WHERE gender = 'Female' AND age < 40)
-            ORDER BY 
-            age DESC;
-    </code>
-   </pre> 
-   
-   <pre>
-    <code class="sql">
-            -- SOLO LOS PRIMEROS 5 RESULTADOS -- 
-            | Género | Edad | Tiempo |
-            |--------|------|--------|
-            | Male   | 35   | 436.23 |
-            | Male   | 33   | 475.37 | 
-    </code>
-   </pre> 
-
-
-
-        </div>
-</div>
-
-
-
-
-
-  <section id="gallery" class="gallery">
-    <div class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>Capturas</h2>
-        <p>Caputras de Pantalla del Ejercicio</p>
-      </div>
-
-      <div class="row g-0" data-aos="fade-left">
-        
-        <div class="col-lg-4 col-md-4">
-            <a data-fancybox="EJERCICIO_3"
-            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}"
-            >
-          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_1.png') }}" width="350px"/>
-          </a>
-            
+          <div class="col-md-3 d-flex flex-column justify-content-between">
+            <img src="{{ url_for('static', filename='assets/img/chavo_4.png') }}" class="img-fluid mb-auto" alt=""> 
+            <div class="my-auto"></div>
           </div>
-
-          <div class="col-lg-4 col-md-4"> 
+          <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+            <h3>Ejercicio 4:</h3>
+            <p class="fst-italic">
+              Enunciado del Ejercicio: 
+            </p>
             
-              <a data-fancybox="EJERCICIO_3"
-              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}"
-              >
-            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_2.png') }}" width="350px" />
-          </a>
+              <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Revisa el video de la lectura llamada “Inner Join” para que prepares la base de datos que vamos a analizar, y, mediante la unión de las tablas “Datos_Personales” y “Actividades_Extra”, obtén una lista de los nombres, los correos y la Clase Extra que están tomando los alumnos que se encuentran registrados en alguna de las Actividades Extra-Curriculares. Ordena la lista de forma ascendente en base a la Actividad en la que se encuentran registrados los alumnos.</li>
+            </ul>    
+                      
+
+            <pre>
+              <code class="sql">
+                  SELECT 
+                      D_P.Nombre,
+                      D_P.Correo,
+                      A_E.Actividad
+                  FROM 
+                      Datos_Personales AS D_P
+                  INNER JOIN 
+                      Actividades_Extra AS A_E
+                  ON 
+                      D_P.Id_num = A_E.Id_num
+                  ORDER BY
+                      A_E.Actividad
+              </code>
+            </pre>        
             
-          </div>
+            <pre>
+              <code class="sql">
+                      -- SOLO LOS 5 PRIMEROS :) -- 
+                      | Nombre | Correo electrónico | Actividad |
+                      | --- | --- | --- |
+                      | Stanford Sullivan | Shayne_Britton589@gmail.com | Baile |
+                      | Shonda Leake | Oliva_Caskey572@gmail.com | Baile |
+                      | Orthey Feuerbach | NULL | Canto |
+                      | Avenell Rüdiger | uvrguf247@outlook.com | Canto |
+                      | Letha Bolt | AbrahamAcevedo@gmail.com | Canto | 
+              </code>
+            </pre>       
+          
+            
 
-          <div class="col-lg-4 col-md-4"> 
-              <a data-fancybox="EJERCICIO_3"
-              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}"
-                >
-            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_3.png') }}" width="350px" />
-          </a>
-          </div> 
-              
-          <div class="col-lg-4 col-md-4"> 
-            <a data-fancybox="EJERCICIO_3"
-            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}"
-              >
-          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_3/CAPTURA_4.png') }}" width="350px" />
-        </a>
-        </div> 
-
-         
-
-          <div>
-
-    </div>  
-  </section>
-
-
-
-<!-- ======= Details Section ======= -->
-<section id="ejercicio_4" class="details">
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 4</h2>
-        </div>
-      </div>
-    </div>    
-  </section> 
-</section>
-
-
-<div class="row content" id="ejercicio_4"  >
-
-  <div class="col-md-3 d-flex flex-column justify-content-between">
-    <img src="{{ url_for('static', filename='assets/img/chavo_4.png') }}" class="img-fluid mb-auto" alt=""> 
-    <div class="my-auto"></div>
-   </div>
-  <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
-    <h3>Ejercicio 4:</h3>
-    <p class="fst-italic">
-      Enunciado del Ejercicio: 
-    </p>
-    
-      <ul>
-      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Revisa el video de la lectura llamada “Inner Join” para que prepares la base de datos que vamos a analizar, y, mediante la unión de las tablas “Datos_Personales” y “Actividades_Extra”, obtén una lista de los nombres, los correos y la Clase Extra que están tomando los alumnos que se encuentran registrados en alguna de las Actividades Extra-Curriculares. Ordena la lista de forma ascendente en base a la Actividad en la que se encuentran registrados los alumnos.</li>
-     </ul>    
-               
-
-     <pre>
-      <code class="sql">
-          SELECT 
-              D_P.Nombre,
-              D_P.Correo,
-              A_E.Actividad
-          FROM 
-              Datos_Personales AS D_P
-          INNER JOIN 
-              Actividades_Extra AS A_E
-          ON 
-              D_P.Id_num = A_E.Id_num
-          ORDER BY
-              A_E.Actividad
-      </code>
-    </pre>        
-    
-     <pre>
-      <code class="sql">
-              -- SOLO LOS 5 PRIMEROS :) -- 
-              | Nombre | Correo electrónico | Actividad |
-              | --- | --- | --- |
-              | Stanford Sullivan | Shayne_Britton589@gmail.com | Baile |
-              | Shonda Leake | Oliva_Caskey572@gmail.com | Baile |
-              | Orthey Feuerbach | NULL | Canto |
-              | Avenell Rüdiger | uvrguf247@outlook.com | Canto |
-              | Letha Bolt | AbrahamAcevedo@gmail.com | Canto | 
-      </code>
-    </pre>       
-  
-     
-
-      <ul>
-      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Utilizando las Tablas Actividades_Extra y Datos_Personales, obtén una lista de los Números de Identificación de los alumnos que están incluidos en la lista de Actividades Extra-curriculares pero que no se encuentran incluidos en la lista de alumnos de la Tabla Datos_personales
-.</li>
-     </ul>    
-
-     
-      <pre>
-      <code class="sql">
-              SELECT 
-                  A_E.Id_num
-              FROM 
-                  Actividades_Extra AS A_E		
-              LEFT JOIN 
-                  Datos_Personales AS D_P
-              ON 
-                  D_P.Id_num = A_E.Id_num
-              WHERE 
-                  D_P.Id_num IS NULL	
-      </code>
-    </pre>    
-     
-
-    <pre>
-      <code class="sql">
-              Id_num
-              103
-              105
-      </code>
-    </pre>    
-
-
-      <ul>
-      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">  Si todavía no has cargado la información de las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, es momento de hacerlo. Ten especial cuidado al momento de definir el formato de las columnas y asegúrate de que OrderQty se cargue como una variable numérica.<BR>
-Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, obtén una lista de los productos adquiridos por cada uno de los Clientes, incluyendo sus descripciones y las cantidades ordenadas
-
-.</li>
-     </ul>    
-
-
-   <pre>
-      <code class="sql">
-            CREATE VIEW MI_VISTAS AS
-            SELECT
-                C.FirstName,C.LastName,C.CompanyName,C.EmailAddress,
-                OC.OrderQty, OC.PurchaseOrderNumber,
-                P.[Name], P.ProductNumber, P.ProductID
-            FROM
-              dbo.Clientes AS C
-            INNER JOIN 
-              dbo.OrdenesdeCompra as OC
-            ON
-              C.CustomerID = OC.CustomerID
-            INNER JOIN
-              DBO.Productos AS P
-            ON 
-              P.ProductID = OC.ProductID
-                
-            SELECT * FROM MI_VISTAS
-      </code>
-    </pre>    
-
-       <pre>
-      <code class="sql">
-        | Nombre | Apellido | Empresa | Correo electrónico | Cantidad | Número de pedido | Producto | SKU | Precio |
-        | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-        | Catherine | Abel | Professional Sales and Service | catherine0@adventure-works.com | 3 | PO19372114749 | Long-Sleeve Logo Jersey, M | LJ-0192-M | 714 |
-        | Cory | Booth | Remarkable Bike Store | cory0@adventure-works.com | 3 | PO7946145876 | Racing Socks, M | SO-R809-M | 874 |
-        | Christopher | Beck | Bulk Discount Store | christopher1@adventure-works.com | 5 | PO8468183315 | Road-350-W Yellow, 40 | BK-R79Y-40 | 973 |
-        | Donald | Blanton | Coalition Bike Company | donald0@adventure-works.com | 2 | PO4582142611 | Short-Sleeve Classic Jersey, S| SJ-0194-S| 881 |
-        | Walter| Brian| Futuristic Bikes| walter0@adventure-works.com| 2| PO3770176273| ML Mountain Seat/Saddle| SE-M798| 909|
-      </code>
-    </pre>    
-
-
-    <ul>
-      <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Utiliza la información obtenida en el punto anterior para saber cuantas unidades se vendieron de cada uno de los productos
+              <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Utilizando las Tablas Actividades_Extra y Datos_Personales, obtén una lista de los Números de Identificación de los alumnos que están incluidos en la lista de Actividades Extra-curriculares pero que no se encuentran incluidos en la lista de alumnos de la Tabla Datos_personales
         .</li>
-     </ul>    
-      
-     <pre>
-      <code class="sql">
-          SELECT 
-              V.ProductID , SUM(V.OrderQty) as Total_Unidades_Vendidas
-          FROM
-              MI_VISTAS AS V
-          GROUP BY 
-              V.ProductID;
-      </code>
-    </pre>    
+            </ul>    
 
-
-    <pre>
-      <code class="sql">
-            -- SOLO LOS 5 PRIMEROS :) --
-            | ProductID | TotalUnitsSold |
-            | --- | --- |
-            | 711 | 6 |
-            | 714 | 3 |
-            | 717 | 1 |
-            | 738 | 5 |
-            | 780 | 5 |
-      </code>
-    </pre>    
-
-
-
-        </div>
-</div>
-
-
-
-
-
-  <section id="gallery" class="gallery">
-    <div class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>Capturas</h2>
-        <p>Caputras de Pantalla del Ejercicio</p>
-      </div>
-
-      <div class="row g-0" data-aos="fade-left">
-        
-        <div class="col-lg-4 col-md-4">
-            <a data-fancybox="EJERCICIO_4"
-            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}"
-            >
-          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}" width="350px"/>
-          </a>
             
-          </div>
-
-          <div class="col-lg-4 col-md-4"> 
+              <pre>
+              <code class="sql">
+                      SELECT 
+                          A_E.Id_num
+                      FROM 
+                          Actividades_Extra AS A_E		
+                      LEFT JOIN 
+                          Datos_Personales AS D_P
+                      ON 
+                          D_P.Id_num = A_E.Id_num
+                      WHERE 
+                          D_P.Id_num IS NULL	
+              </code>
+            </pre>    
             
-              <a data-fancybox="EJERCICIO_4"
-              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}"
-              >
-            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}" width="350px" />
-          </a>
-            
-          </div>
 
-          <div class="col-lg-4 col-md-4"> 
-              <a data-fancybox="EJERCICIO_4"
-              data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}"
-                >
-            <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}" width="350px" />
-          </a>
-          </div> 
+            <pre>
+              <code class="sql">
+                      Id_num
+                      103
+                      105
+              </code>
+            </pre>    
+
+
+              <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">  Si todavía no has cargado la información de las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, es momento de hacerlo. Ten especial cuidado al momento de definir el formato de las columnas y asegúrate de que OrderQty se cargue como una variable numérica.<BR>
+        Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de datos que creamos en el video “Cargando un archivo csv en SQL Server”, obtén una lista de los productos adquiridos por cada uno de los Clientes, incluyendo sus descripciones y las cantidades ordenadas
+
+        .</li>
+            </ul>    
+
+
+          <pre>
+              <code class="sql">
+                    CREATE VIEW MI_VISTAS AS
+                    SELECT
+                        C.FirstName,C.LastName,C.CompanyName,C.EmailAddress,
+                        OC.OrderQty, OC.PurchaseOrderNumber,
+                        P.[Name], P.ProductNumber, P.ProductID
+                    FROM
+                      dbo.Clientes AS C
+                    INNER JOIN 
+                      dbo.OrdenesdeCompra as OC
+                    ON
+                      C.CustomerID = OC.CustomerID
+                    INNER JOIN
+                      DBO.Productos AS P
+                    ON 
+                      P.ProductID = OC.ProductID
+                        
+                    SELECT * FROM MI_VISTAS
+              </code>
+            </pre>    
+
+              <pre>
+              <code class="sql">
+                | Nombre | Apellido | Empresa | Correo electrónico | Cantidad | Número de pedido | Producto | SKU | Precio |
+                | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+                | Catherine | Abel | Professional Sales and Service | catherine0@adventure-works.com | 3 | PO19372114749 | Long-Sleeve Logo Jersey, M | LJ-0192-M | 714 |
+                | Cory | Booth | Remarkable Bike Store | cory0@adventure-works.com | 3 | PO7946145876 | Racing Socks, M | SO-R809-M | 874 |
+                | Christopher | Beck | Bulk Discount Store | christopher1@adventure-works.com | 5 | PO8468183315 | Road-350-W Yellow, 40 | BK-R79Y-40 | 973 |
+                | Donald | Blanton | Coalition Bike Company | donald0@adventure-works.com | 2 | PO4582142611 | Short-Sleeve Classic Jersey, S| SJ-0194-S| 881 |
+                | Walter| Brian| Futuristic Bikes| walter0@adventure-works.com| 2| PO3770176273| ML Mountain Seat/Saddle| SE-M798| 909|
+              </code>
+            </pre>    
+
+
+            <ul>
+              <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Utiliza la información obtenida en el punto anterior para saber cuantas unidades se vendieron de cada uno de los productos
+                .</li>
+            </ul>    
               
-          <div class="col-lg-4 col-md-4"> 
-            <a data-fancybox="EJERCICIO_4"
-            data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}"
-              >
-          <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}" width="350px" />
-        </a>
-        </div> 
+            <pre>
+              <code class="sql">
+                  SELECT 
+                      V.ProductID , SUM(V.OrderQty) as Total_Unidades_Vendidas
+                  FROM
+                      MI_VISTAS AS V
+                  GROUP BY 
+                      V.ProductID;
+              </code>
+            </pre>    
 
-         
 
-          <div>
+            <pre>
+              <code class="sql">
+                    -- SOLO LOS 5 PRIMEROS :) --
+                    | ProductID | TotalUnitsSold |
+                    | --- | --- |
+                    | 711 | 6 |
+                    | 714 | 3 |
+                    | 717 | 1 |
+                    | 738 | 5 |
+                    | 780 | 5 |
+              </code>
+            </pre>    
 
-    </div>  
-  </section>
+
+
+                </div>
+        </div>
+ 
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+
+              <div class="section-title" data-aos="fade-up">
+                <h2>Capturas</h2>
+                <p>Caputras de Pantalla del Ejercicio</p>
+              </div>
+
+              <div class="row g-0" data-aos="fade-left">
+                
+                <div class="col-lg-4 col-md-4">
+                    <a data-fancybox="EJERCICIO_4"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}"
+                    >
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_1.png') }}" width="350px"/>
+                  </a>
+                    
+                  </div>
+
+                  <div class="col-lg-4 col-md-4"> 
+                    
+                      <a data-fancybox="EJERCICIO_4"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}"
+                      >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_2.png') }}" width="350px" />
+                  </a>
+                    
+                  </div>
+
+                  <div class="col-lg-4 col-md-4"> 
+                      <a data-fancybox="EJERCICIO_4"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}"
+                        >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_3.png') }}" width="350px" />
+                  </a>
+                  </div> 
+                      
+                  <div class="col-lg-4 col-md-4"> 
+                    <a data-fancybox="EJERCICIO_4"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}"
+                      >
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_4/CAPTURA_4.png') }}" width="350px" />
+                </a>
+                </div> 
+
+                
+
+                  <div>
+
+            </div>  
+        </section>
+          
+          
+
+
+        
+
+            <!-- EJERCICIO 5 -->
+
+          <!-- EJERCICIO 5 -->
+          <section id="ejercicio_5" class="details">
+            <section id="testimonials" class="testimonials">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-lg-8">
+                    <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 5</h2>
+                  </div>
+                </div>
+              </div>    
+            </section> 
+          </section>
   
   
+          <div class="row content" id="ejercicio_5"  >
+  
+            <div class="col-md-3 d-flex flex-column justify-content-between">
+              <img src="{{ url_for('static', filename='assets/img/chavo_5.png') }}" class="img-fluid mb-auto" alt=""> 
+              <div class="my-auto"></div>
+            </div>
+            <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+              <h3>Ejercicio 5:</h3>
+              <p class="fst-italic">
+                Enunciado del Ejercicio: 
+              </p>
+              
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Crea la tabla Utiles_Escolares_2 que aparece en el video llamado INSERT asignando a la Columna Prod_Num como llave primaria
+                  Una vez que la hayas creado, inserta al menos tres productos que contengan información en todas las columnas de la tabla utilizando el comando INSERT INTO</li>
+              </ul>    
+                        
+  
+              <pre>
+                <code class="sql">
+                  CREATE TABLE UTILIES_ESCOLARES
+                  (
+                      PROD_NUM INT PRIMARY KEY,
+                      PRODUCTO VARCHAR(50),
+                      PROVEEDOR VARCHAR(100),
+                      COSTO DECIMAL(6,2)
+                  )
+                  
+                  INSERT INTO UTILIES_ESCOLARES 
+                  VALUES
+                      (1, 'PRODUCTO 1','PROVEEDOR 1',1000.00),
+                      (2, 'PRODUCTO 2','PROVEEDOR 2',2000.00),
+                      (3, 'PRODUCTO 3','PROVEEDOR 3',2500.50)
+                </code>
+              </pre>        
+              
+               
+            
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Con el comando DELETE borra la información correspondiente al Cuaderno Cuadriculado
+              </ul>   
+
+              <pre>
+                <code class="sql">
+                  DELETE FROM UTILIES_ESCOLARES
+                </code>
+              </pre>        
+              
+
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Agrega una columna de tipo caracter llamada Categoría a la tabla Utiles_Escolares_2 cuyo valor por default sea 'Utiles Escolares'
+              </ul>   
+
+          
+              <pre>
+                <code class="sql">
+                  ALTER TABLE UTILIES_ESCOLARES_2 ADD CATEGORIA VARCHAR(150)
+                </code>
+              </pre>        
+              
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Utilizando el comando UPDATE, asigna la categoria 'Articulos Varios' al papel de china
+              </ul>   
+
+              <pre>
+                <code class="sql">
+                  UPDATE 
+                      UTILIES_ESCOLARES_2 
+                  SET 
+                      PRODUCTO = 'Articulos Varios'
+                  WHERE
+                      PRODUCTO = 'Papel de China'
+                </code>
+              </pre>   
+
+
+              <ul>
+                <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Cambia la columna a tipo NOT NULL siguiendo los pasos que aparecen en el video ALTER TABLE II
+
+              </ul>   
+
+
+              <pre>
+                <code class="sql">
+                  UPDATE 
+                      UTILIES_ESCOLARES_2 
+                  SET
+                      CATEGORIA='CATEGORIA A'
+                  WHERE 
+                      CATEGORIA IS NULL
+                  
+                  ALTER TABLE UTILIES_ESCOLARES_2 ALTER COLUMN CATEGORIA VARCHAR(150) NOT NULL
+                </code>
+              </pre>   
+
+  
+                  </div>
+          </div>
+   
+  
+          <section id="gallery" class="gallery">
+              <div class="container">
+  
+                <div class="section-title" data-aos="fade-up">
+                  <h2>Capturas</h2>
+                  <p>Caputras de Pantalla del Ejercicio</p>
+                </div>
+  
+                <div class="row g-0" data-aos="fade-left">
+                  
+                  <div class="col-lg-4 col-md-4">
+                      <a data-fancybox="EJERCICIO_5"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_1.png') }}"
+                      >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_1.png') }}" width="350px"/>
+                    </a>
+                      
+                    </div>
+  
+                    <div class="col-lg-4 col-md-4"> 
+                      
+                        <a data-fancybox="EJERCICIO_5"
+                        data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_2.png') }}"
+                        >
+                      <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_2.png') }}" width="350px" />
+                    </a>
+                      
+                    </div>
+  
+                    <div class="col-lg-4 col-md-4"> 
+                        <a data-fancybox="EJERCICIO_5"
+                        data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_3.png') }}"
+                          >
+                      <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_3.png') }}" width="350px" />
+                    </a>
+                    </div> 
+                        
+                    <div class="col-lg-4 col-md-4"> 
+                      <a data-fancybox="EJERCICIO_5"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_4.png') }}"
+                        >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_4.png') }}" width="350px" />
+                  </a>
+                  </div> 
+                  
+                  <div class="col-lg-4 col-md-4"> 
+                    <a data-fancybox="EJERCICIO_5"
+                    data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_5.png') }}"
+                      >
+                  <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_5/CAPTURA_5.png') }}" width="350px" />
+                </a>
+                </div> 
+                  
+  
+                    <div>
+  
+              </div>  
+          </section>       
 
 
 
-
-
-
-
-
-
-
-
-      </div>
-    </section><!-- End Details Section -->
-      </div>
+            <!-- EJERCICIO 6 -->
+            <section id="ejercicio_6" class="details">
+              <section id="testimonials" class="testimonials">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                      <h2 class="text-center" style="font-size: 5.5rem; color: #ffffff; font-family: 'Gagalin', cursive;">Ejercicio 6</h2>
+                    </div>
+                  </div>
+                </div>    
+              </section> 
+            </section>
     
-
-
-
-
-
-
-
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{ url_for('static', filename='assets/img/testimonials/testimonials-1.jpg') }}" class="testimonial-img" alt="">
-                 <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+    
+            <div class="row content" id="ejercicio_6"  >
+    
+              <div class="col-md-3 d-flex flex-column justify-content-between">
+                <img src="{{ url_for('static', filename='assets/img/chavo_6.png') }}" class="img-fluid mb-auto" alt=""> 
+                <div class="my-auto"></div>
+              </div>
+              <div class="col-md-9 pt-5 order-2 order-md-1" data-aos="fade-up">
+                <h3>Ejercicio 6:</h3>
+                <p class="fst-italic">
+                  Enunciado del Ejercicio: 
                 </p>
-              </div>
-            </div><!-- End testimonial item -->
+                
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Crea la tabla Utiles_Escolares_2 que aparece en el video llamado INSERT asignando a la Columna Prod_Num como llave primaria
+                    Una vez que la hayas creado, inserta al menos tres productos que contengan información en todas las columnas de la tabla utilizando el comando INSERT INTO</li>
+                </ul>    
+                          
+    
+                <pre>
+                  <code class="sql">
+                   
+                  </code>
+                </pre>        
+                
+                 
+             
+                
+        
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{ url_for('static', filename='assets/img/testimonials/testimonials-2.jpg') }}" class="testimonial-img" alt="">
-                   <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{ url_for('static', filename='assets/img/testimonials/testimonials-3.jpg') }}" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{ url_for('static', filename='assets/img/testimonials/testimonials-4.jpg') }}" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="{{ url_for('static', filename='assets/img/testimonials/testimonials-5.jpg') }}" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
-    <!-- ======= Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Our Great Team</p>
-        </div>
-
-        <div class="row" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member" data-aos="zoom-in" data-aos-delay="100">
-              <div class="pic">
-                <img src="{{ url_for('static', filename='assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
+    
+                    </div>
             </div>
-          </div>
+     
+    
+            <section id="gallery" class="gallery">
+                <div class="container">
+    
+                  <div class="section-title" data-aos="fade-up">
+                    <h2>Capturas</h2>
+                    <p>Caputras de Pantalla del Ejercicio</p>
+                  </div>
+    
+                  <div class="row g-0" data-aos="fade-left">
+                    
+                    <div class="col-lg-4 col-md-4">
+                        <a data-fancybox="EJERCICIO_6"
+                        data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_1.png') }}"
+                        >
+                      <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_1.png') }}" width="350px"/>
+                      </a>
+                        
+                      </div>
+    
+                      <div class="col-lg-4 col-md-4"> 
+                        
+                          <a data-fancybox="EJERCICIO_6"
+                          data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_2.png') }}"
+                          >
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_2.png') }}" width="350px" />
+                      </a>
+                        
+                      </div>
+    
+                      <div class="col-lg-4 col-md-4"> 
+                          <a data-fancybox="EJERCICIO_6"
+                          data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_3.png') }}"
+                            >
+                        <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_3.png') }}" width="350px" />
+                      </a>
+                      </div> 
+                          
+                      <div class="col-lg-4 col-md-4"> 
+                        <a data-fancybox="EJERCICIO_6"
+                        data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_4.png') }}"
+                          >
+                      <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_4.png') }}" width="350px" />
+                    </a>
+                    </div> 
+                    
+                    <div class="col-lg-4 col-md-4"> 
+                      <a data-fancybox="EJERCICIO_6"
+                      data-src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_5.png') }}"
+                        >
+                    <img src="{{ url_for('static', filename='assets/img/Capturas_Ejercicios_6/CAPTURA_5.png') }}" width="350px" />
+                  </a>
+                  </div> 
+                    
+    
+                      <div>
+    
+                </div>  
+            </section>       
+  
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="200">
-              <div class="pic">
-                <img src="{{ url_for('static', filename='assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
+
+
+
+
+
+
+
+
+
+
 
               </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+            </section><!-- End Details Section -->
               </div>
-            </div>
-          </div>
+            
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="300">
-              <div class="pic">
-                <img src="{{ url_for('static', filename='assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
 
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="member" data-aos="zoom-in" data-aos-delay="400">
-              <div class="pic">
-                <img src="{{ url_for('static', filename='assets/img/team/team-4.jpg') }}" class="img-fluid" alt="">
 
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-        </div>
 
-      </div>
-    </section><!-- End Team Section -->
 
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-      <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Pricing</h2>
-          <p>Check our Pricing</p>
-        </div>
+   
 
-        <div class="row" data-aos="fade-left">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-            <div class="box featured" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="300">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="400">
-              <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Pricing Section -->
-
-    <!-- ======= F.A.Q Section ======= -->
+ 
+    <!-- ======= ANEXOS ======= -->
     <section id="faq" class="faq section-bg">
       <div class="container">
 
@@ -1657,86 +1571,6 @@ Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de dat
 
 
   
-    <!-- EMAIL - CONTACTO  
-     
-    
-
-
-
-    <section id="contact" class="contact">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Contact</h2>
-          <p>Contact Us</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-right" data-aos-delay="100">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Ubicación :</h4>
-                <p>Santa Rosa 231, Segui , Entre Rios, Argentina</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>ivansergiolopez2020@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Telefono:</h4>
-                <p>+543434540675</p>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
-
-             
-          
-              
-            <form action="forms/contact.py" method="post" role="form" class="php-email-form"  
-
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit" onclick="sendEmail()" >Send Message</button></div>
-            </form>
-
-          </div> 
-
-
-        </div>
-
-      </div>
-    </section> 
-
-     -->
-
-
 
   </main><!-- End #main -->
 
@@ -1748,71 +1582,36 @@ Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de dat
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>Bootslander</h3>
-              <p class="pb-3"><em>Qui repudiandae et eum dolores alias sed ea. Qui suscipit veniam excepturi quod.</em></p>
+              <h3>Ivan Sergio Lopez</h3>
+              <p class="pb-3"><em>"Yo no soy Robin Hood pero el IVÁN tiene su leyenda."</em></p>
               <p>
-                A108 Adam Street <br>
-                NY 535022, USA<br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                Santa Rosa 231 <br>
+                Segui Entre Rios, Argentina<br><br>
+                <strong>Phone:</strong> +543434540675<br>
+                <strong>Email:</strong> ivansergiolopez2020@gmail.com<br>
               </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              </div>
+            
             </div>
+         
           </div>
+        
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
+          <div class="col-lg-4 col-md-6">
+                    
           </div>
+            
 
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
+            <div class="col-lg-4 col-md-6">
+            <img src="{{ url_for('static', filename='assets/img/hero-img.png') }}" style="float: right;"  width="350px">
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+         </div>
 
-          </div>
+
 
         </div>
       </div>
     </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Bootslander</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bootslander-free-bootstrap-landing-page-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -1860,7 +1659,14 @@ Utilizando las tablas Clientes, Ordenes_de_Compra y Productos, de la base de dat
   Fancybox.bind('[data-fancybox="EJERCICIO_4"]', {
     l10n : Fancybox.l10n.de
   }); 
+  
+  Fancybox.bind('[data-fancybox="EJERCICIO_5"]', {
+    l10n : Fancybox.l10n.de
+  }); 
 
+  Fancybox.bind('[data-fancybox="EJERCICIO_6"]', {
+    l10n : Fancybox.l10n.de
+  }); 
 
 </script>
 
