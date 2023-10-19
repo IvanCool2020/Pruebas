@@ -36,8 +36,8 @@
   <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
 
   <style>
-    .language-python.hljs {
-      margin-left: -85px !important;
+    .sql{
+      margin-left: -135px !important;
       }
 
       .img-container {
@@ -1357,24 +1357,138 @@
                 <ul>
                   <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">Utiliza un cursor para obtener una lista de los nombres y el género de los alumnos que se encuentran en la tabla Datos_Personales. Utiliza un ciclo While para recorrer la tabla
 
-                    </li>
+                  </li>
                 </ul>    
                           
     
                 <pre>
                   <code class="sql">
-                   
+                    DECLARE @Nombre VARCHAR(50), @Genero CHAR(1)
+                    DECLARE cursor_alumnos CURSOR FOR 
+                    SELECT Nombre, Genero FROM Datos_Personales
+                    
+                    OPEN cursor_alumnos
+                    
+                    FETCH NEXT FROM cursor_alumnos INTO @Nombre, @Genero
+                    
+                    WHILE @@FETCH_STATUS = 0
+                    BEGIN
+                        PRINT 'Nombre: ' + @Nombre + ', Género: ' + @Genero
+                        FETCH NEXT FROM cursor_alumnos INTO @Nombre, @Genero
+                    END
+                    
+                    CLOSE cursor_alumnos
+                    DEALLOCATE cursor_alumnos
                   </code>
                 </pre>        
                 
-                 
+                <pre>
+                  <code class="sql">
+                    -- SOLO LOS 5 PRIMEROS :) --
+                    Nombre: Letha Bolt, Género: M
+                    Nombre: Vanita Kelleher, Género: F
+                    Nombre: Marcos Abraham, Género: M
+                    Nombre: Miyoko Mckinney, Género: M
+                    Nombre: Adolph Francisco, Género: M        
+                  </code>
+                </pre>
              
                 
         
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Crea esta misma lista, pero colocando en primer lugar el último registro y terminando con el primer registro
+
+                  </li>
+                </ul>    
+                <pre>
+                  <code class="sql">
+                    DECLARE @Nombre VARCHAR(50), @Genero CHAR(1)
+                    DECLARE cursor_alumnos CURSOR FOR 
+                    SELECT Nombre, Genero FROM Datos_Personales ORDER BY Id_num DESC
+
+                    OPEN cursor_alumnos
+
+                    FETCH NEXT FROM cursor_alumnos INTO @Nombre, @Genero
+
+                    WHILE @@FETCH_STATUS = 0
+                    BEGIN
+                        PRINT 'Nombre: ' + @Nombre + ', Género: ' + @Genero
+                        FETCH NEXT FROM cursor_alumnos INTO @Nombre, @Genero
+                    END
+
+                    CLOSE cursor_alumnos
+                    DEALLOCATE cursor_alumnos 
+                  </code>
+                </pre>                  
+
+
+                <pre>
+                  <code class="sql">
+                    -- SOLO LOS 5 PRIMEROS :) --
+                    Nombre: Friederun Appel, Género: M
+                    Nombre: Almute Ebert, Género: M
+                    Nombre: Ottfried Schneidermann, Género: F
+                    Nombre: Justus Dannenberg, Género: F
+                    Nombre: Yente Ulbricht, Género: M      
+                  </code>
+                </pre>                  
+
+
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px">  Cambia el nombre de la Tabla Datos_Personales a Datos_Alumnos utilizando un procedimiento almacenado ya existente en SQL Server.
+                    Una vez que lo hayas hecho, asigna de nuevo el nombre de Datos_Personales a dicha tabla
+                  </li>
+                </ul>    
+             
+
+
+                <pre>
+                  <code class="sql">
+                    EXEC sp_rename 'Datos_Personales', 'Datos_Alumnos'; 
+                    SELECT * FROM Datos_Alumnos;
+                    
+                    EXEC sp_rename 'Datos_Alumnos', 'Datos_Personales';
+                    SELECT * FROM Datos_Personales;
+                  </code>
+                </pre>                  
+
+                
+                <ul>
+                  <li><img src="{{ url_for('static', filename='assets/img/check.png') }}" width="24px"> Crea un Procedimiento Almacenado con el que puedas extraer la información de todas las mujeres que se encuentran en la ta
+
+                  </li>
+                </ul>    
+             
+                <pre>
+                  <code class="sql">
+                    CREATE PROCEDURE sp_Mujeres
+                    AS
+                    BEGIN
+                        SELECT * FROM Datos_Personales WHERE Genero = 'F';
+                    END;
+
+                    EXEC sp_Mujeres;
+                  </code>
+                </pre>              
+
+
+                <pre>
+                  <code class="sql">
+                    -- SOLO LOS 5 PRIMEROS :) --
+                    | Id_num | Nombre          | Correo                  | Direccion           | Ciudad      | Telefono       | Genero | Estado_Civil |
+                    |--------|-----------------|-------------------------|---------------------|-------------|----------------|--------|--------------|
+                    | 2      | Vanita Kelleher | Jude_High169@gmail.com  | NULL                | Concord     | (684) 186-0087 | F      | Married      |
+                    | 6      | Oma Lawler      | NULL                    | NULL                | Kings Point | (133) 683-0582 | F      | Single       |
+                    | 7      | Felix Alba      | Palmer_Lofton@gmail.com | 3813 Hope St        | Hoopeston   | (765) 713-9006 | F      | Widow        |
+                    | 8      | Eusebia Noland  | Abernathy@gmail.com     | 1168 Lake Circle    | Concord     | (447) 838-0332 | F      | Single       |
+                    | 9      | Denisha Mcginnis| Adaline_Abbott@gmail.com| 74 Burwood Way      | Brookings   | (730) 273-6683 | F      | Single       |
+
+                  </code>
+                </pre>              
 
 
 
-    
+
                     </div>
             </div>
      
